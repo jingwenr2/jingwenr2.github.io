@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jingwen (Jenny) Ruan — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF7F2;
+    --warm-black: #1A1714;
+    --espresso: #3D2E1E;
+    --caramel: #C4956A;
+    --blush: #E8C4A8;
+    --sage: #8B9E7E;
+    --sage-light: #D4DEC9;
+    --slate: #6B6560;
+    --cream: #F0EAE0;
+    --accent: #B85C38;
+    --card-bg: rgba(255,255,255,0.6);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  /* ---- CUSTOM CURSOR ---- */
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivory);
+    color: var(--warm-black);
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3C!-- ears --%3E%3Cpolygon points='6,14 9,4 13,12' fill='%23A0A0A8' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='26,14 23,4 19,12' fill='%23A0A0A8' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='7.5,12.5 9.5,6.5 12,11' fill='%23D8D8E0' stroke='none'/%3E%3Cpolygon points='24.5,12.5 22.5,6.5 20,11' fill='%23D8D8E0' stroke='none'/%3E%3C!-- face --%3E%3Cellipse cx='16' cy='19' rx='10' ry='9' fill='%23A0A0A8' stroke='%23444' stroke-width='1.2'/%3E%3C!-- eyes --%3E%3Cellipse cx='12' cy='17' rx='2' ry='2.5' fill='%23333'/%3E%3Cellipse cx='20' cy='17' rx='2' ry='2.5' fill='%23333'/%3E%3Ccircle cx='12.8' cy='16.2' r='0.7' fill='white'/%3E%3Ccircle cx='20.8' cy='16.2' r='0.7' fill='white'/%3E%3C!-- nose --%3E%3Cellipse cx='16' cy='21' rx='1.2' ry='0.8' fill='%23D8D8E0'/%3E%3C!-- mouth --%3E%3Cpath d='M14 22 Q16 24 18 22' fill='none' stroke='%23444' stroke-width='0.8' stroke-linecap='round'/%3E%3C!-- whiskers --%3E%3Cline x1='6' y1='20' x2='13' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='6' y1='22' x2='13' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='20' x2='19' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='22' x2='19' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  a, button, .pill, .project-card, .stat-card, .cert-item, .timeline-item, .contact-btn, .nav-links a {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3C!-- ears --%3E%3Cpolygon points='6,14 9,4 13,12' fill='%238A8A94' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='26,14 23,4 19,12' fill='%238A8A94' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='7.5,12.5 9.5,6.5 12,11' fill='%23D8D8E0' stroke='none'/%3E%3Cpolygon points='24.5,12.5 22.5,6.5 20,11' fill='%23D8D8E0' stroke='none'/%3E%3C!-- face --%3E%3Cellipse cx='16' cy='19' rx='10' ry='9' fill='%238A8A94' stroke='%23444' stroke-width='1.2'/%3E%3C!-- eyes - happy/squinting --%3E%3Cpath d='M10 17 Q12 15 14 17' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M18 17 Q20 15 22 17' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round'/%3E%3C!-- nose --%3E%3Cellipse cx='16' cy='21' rx='1.2' ry='0.8' fill='%23D8D8E0'/%3E%3C!-- mouth --%3E%3Cpath d='M14 22 Q16 24.5 18 22' fill='none' stroke='%23444' stroke-width='0.8' stroke-linecap='round'/%3E%3C!-- whiskers --%3E%3Cline x1='6' y1='20' x2='13' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='6' y1='22' x2='13' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='20' x2='19' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='22' x2='19' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer;
+  }
+
+  /* ---- CURSOR BLINK (on click) ---- */
+  body.cursor-blink,
+  body.cursor-blink a,
+  body.cursor-blink button,
+  body.cursor-blink .pill,
+  body.cursor-blink .project-card,
+  body.cursor-blink .stat-card,
+  body.cursor-blink .cert-item,
+  body.cursor-blink .timeline-item,
+  body.cursor-blink .contact-btn,
+  body.cursor-blink .nav-links a {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpolygon points='6,14 9,4 13,12' fill='%238A8A94' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='26,14 23,4 19,12' fill='%238A8A94' stroke='%23444' stroke-width='1' stroke-linejoin='round'/%3E%3Cpolygon points='7.5,12.5 9.5,6.5 12,11' fill='%23D8D8E0' stroke='none'/%3E%3Cpolygon points='24.5,12.5 22.5,6.5 20,11' fill='%23D8D8E0' stroke='none'/%3E%3Cellipse cx='16' cy='19' rx='10' ry='9' fill='%238A8A94' stroke='%23444' stroke-width='1.2'/%3E%3C!-- squinting eyes (blink) --%3E%3Cpath d='M9.5 17.5 Q12 17.5 14.5 17.5' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M17.5 17.5 Q20 17.5 22.5 17.5' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round'/%3E%3Cellipse cx='16' cy='21' rx='1.2' ry='0.8' fill='%23D8D8E0'/%3E%3Cpath d='M14 22 Q16 24 18 22' fill='none' stroke='%23444' stroke-width='0.8' stroke-linecap='round'/%3E%3Cline x1='6' y1='20' x2='13' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='6' y1='22' x2='13' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='20' x2='19' y2='21.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3Cline x1='26' y1='22' x2='19' y2='22.5' stroke='%23555' stroke-width='0.7' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, auto !important;
+  }
+
+  /* ---- HIGHLIGHT STYLE ---- */
+  .highlight {
+    background: linear-gradient(104deg, transparent 0.9%, rgba(232,196,168,0.45) 2.4%, rgba(232,196,168,0.3) 5.8%, rgba(232,196,168,0.45) 93%, transparent 96%);
+    border-radius: 4px;
+    padding: 0.1em 0.2em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(250,247,242,0.85);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    transition: all 0.4s ease;
+  }
+
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--espresso);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  nav .logo .logo-doodle {
+    width: 28px;
+    height: 28px;
+  }
+
+  nav .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  nav .nav-links a {
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
+  nav .nav-links a:hover { color: var(--espresso); }
+  nav .nav-links a:hover::after { width: 100%; }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative blobs */
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    opacity: 0.5;
+    z-index: 0;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+  }
+
+  .blob-1 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle at 30% 40%, var(--blush), rgba(232,196,168,0.2));
+    top: -80px;
+    right: -60px;
+    border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+    animation: blobFloat1 14s ease-in-out infinite;
+  }
+
+  .blob-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at 60% 30%, var(--sage-light), rgba(212,222,201,0.15));
+    bottom: 60px;
+    right: 15%;
+    border-radius: 44% 56% 63% 37% / 55% 38% 62% 45%;
+    animation: blobFloat2 18s ease-in-out infinite;
+  }
+
+  .blob-3 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at 50% 50%, var(--caramel), rgba(196,149,106,0.1));
+    top: 30%;
+    right: 30%;
+    border-radius: 50% 50% 36% 64% / 43% 60% 40% 57%;
+    opacity: 0.3;
+    animation: blobFloat3 12s ease-in-out infinite;
+  }
+
+  .blob-4 {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 40% 60%, rgba(184,92,56,0.3), rgba(184,92,56,0.05));
+    top: 15%;
+    left: 60%;
+    border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+    opacity: 0.35;
+    animation: blobFloat1 16s ease-in-out infinite reverse;
+  }
+
+  .blob-5 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--cream), rgba(240,234,224,0.1));
+    bottom: 20%;
+    left: 10%;
+    border-radius: 40% 60% 50% 50% / 55% 40% 60% 45%;
+    opacity: 0.4;
+    animation: blobFloat2 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes blobFloat1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    33% { transform: translate(15px, -20px) rotate(3deg) scale(1.03); }
+    66% { transform: translate(-10px, 10px) rotate(-2deg) scale(0.97); }
+  }
+
+  @keyframes blobFloat2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-20px, 15px) rotate(4deg); }
+  }
+
+  @keyframes blobFloat3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40% { transform: translate(10px, -15px) scale(1.05); }
+    80% { transform: translate(-8px, 8px) scale(0.95); }
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-text { }
+
+  .hero-image-slot {
+    position: relative;
+    width: 420px;
+    aspect-ratio: 3/4;
+    border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 60%, var(--sage-light) 100%);
+    border: 2px dashed var(--caramel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.0s forwards;
+  }
+
+  .hero-image-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+  }
+
+  .hero-image-slot .placeholder-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-image-slot .placeholder-icon {
+    font-size: 2.5rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 900px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+    }
+    .hero-image-slot {
+      width: 280px;
+      margin: 0 auto;
+    }
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--espresso);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    max-width: 540px;
+    font-size: 1.1rem;
+    color: var(--slate);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .pill {
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border: 1.5px solid var(--blush);
+    color: var(--espresso);
+    background: rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+  }
+
+  .pill:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.2s forwards;
+  }
+
+  .scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--caramel);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ---- SECTIONS ---- */
+  section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-doodle {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    opacity: 0.75;
+  }
+
+  /* ---- ABOUT ---- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 1.8rem;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.04);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--slate);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blush), transparent);
+  }
+
+  /* ---- EXPERIENCE ---- */
+  .timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--blush), var(--sage-light));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.04);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 2.2rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--ivory);
+    transform: translateX(-4px);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--espresso);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--caramel);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .timeline-org {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--slate);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ---- PROJECTS ---- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.04);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--caramel));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .badge-winner {
+    background: var(--sage-light);
+    color: var(--sage);
+  }
+
+  .badge-hackathon {
+    background: #F5E6D3;
+    color: var(--accent);
+  }
+
+  .badge-competition {
+    background: #E8D5F5;
+    color: #7B5EA7;
+  }
+
+  .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .tech-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--espresso);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---- SKILLS ---- */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--blush);
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .skill-list li {
+    font-size: 0.9rem;
+    color: var(--slate);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .skill-list li::before {
+    content: '\203A';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ---- EDUCATION ---- */
+  .edu-card {
+    padding: 3rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--card-bg), rgba(232,196,168,0.15));
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .edu-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--accent), var(--caramel));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .edu-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-details .degree {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-details .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  /* ---- CERTIFICATIONS ---- */
+  .certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cert-item {
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cert-item:hover { transform: translateX(4px); }
+
+  .cert-name {
+    font-weight: 500;
+    color: var(--espresso);
+    font-size: 0.95rem;
+  }
+
+  .cert-issuer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--caramel);
+  }
+
+  /* ---- CAT SECTION ---- */
+  .cat-section {
+    padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cat-section-inner {
+    background: linear-gradient(135deg, rgba(232,196,168,0.12), rgba(212,222,201,0.12));
+    border-radius: 28px;
+    padding: 3.5rem;
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cat-section-inner::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(232,196,168,0.2), transparent);
+    border-radius: 50%;
+  }
+
+  .cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cat-subtitle {
+    font-size: 1rem;
+    color: var(--slate);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .cat-photo-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cat-photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  }
+
+  .cat-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--cream), var(--blush));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--slate);
+    font-size: 0.85rem;
+    font-weight: 300;
+  }
+
+  .cat-photo-placeholder svg {
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
+  }
+
+  .cat-photo-card .cat-caption {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .cat-caption h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.3rem;
+  }
+
+  .cat-caption p {
+    font-size: 0.85rem;
+    color: var(--slate);
+    font-weight: 300;
+  }
+
+  /* ---- CONTACT ---- */
+  .contact-section {
+    text-align: center;
+    padding: 8rem 3rem;
+  }
+
+  .contact-section .section-title {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .contact-desc {
+    font-size: 1.1rem;
+    color: var(--slate);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--espresso);
+    color: var(--ivory);
+    text-decoration: none;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid var(--espresso);
+  }
+
+  .contact-btn:hover {
+    background: transparent;
+    color: var(--espresso);
+    transform: translateY(-2px);
+  }
+
+  .contact-btn.outline {
+    background: transparent;
+    color: var(--espresso);
+  }
+
+  .contact-btn.outline:hover {
+    background: var(--espresso);
+    color: var(--ivory);
+  }
+
+  /* ---- NAV SOCIALS ---- */
+  .nav-socials {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .nav-social-link {
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  .nav-social-link:hover {
+    color: var(--espresso);
+    transform: translateY(-2px);
+  }
+
+  /* ---- FOOTER ---- */
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 3rem;
+    border-top: 1px solid rgba(0,0,0,0.04);
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--slate);
+    font-weight: 300;
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.3); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav .nav-links { gap: 1.2rem; }
+    nav .nav-links a { font-size: 0.75rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .edu-card { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .timeline { padding-left: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .contact-section { padding: 5rem 1.5rem; }
+    .cat-section { padding: 3rem 1.5rem; }
+    .cat-section-inner { padding: 2rem; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .blob-1 { width: 250px; height: 250px; }
+    .blob-2 { width: 180px; height: 180px; }
+    .blob-3 { width: 130px; height: 130px; }
+    .blob-4, .blob-5 { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    nav .nav-links { display: none; }
+    .hero h1 { font-size: 2.5rem; }
+    .about-stats { grid-template-columns: 1fr; }
+    .section-doodle { width: 28px; height: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    JR
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="https://www.linkedin.com/in/jingwenr/" target="_blank" class="nav-social-link" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/jingwenr2" target="_blank" class="nav-social-link" aria-label="GitHub">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Decorative blobs -->
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+  <div class="hero-blob blob-4"></div>
+  <div class="hero-blob blob-5"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-tag">Business Analytics &middot; AI &middot; Consulting</p>
+      <h1>Jingwen<br><em>(Jenny)</em> Ruan</h1>
+      <p class="hero-desc">
+        <span class="highlight">AI Engineering Fellow</span> at CodePath and junior at Baruch College studying Computer Information Systems.
+        Passionate about the intersection of <span class="highlight">technology, data, and business strategy</span>.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Data Analysis</span>
+        <span class="pill">Python</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Excel</span>
+        <span class="pill">AI / ML</span>
+      </div>
+    </div>
+    <div class="hero-image-slot">
+      <img src="hero.jpeg" alt="Jenny Ruan">
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <h2 class="section-title">
+    About
+    <!-- Coffee cup doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 15 L8 30 Q8 34 12 34 L24 34 Q28 34 28 30 L28 15" fill="rgba(196,149,106,0.1)"/>
+      <path d="M28 18 Q34 18 34 23 Q34 28 28 28"/>
+      <path d="M6 15 L30 15"/>
+      <path d="M14 10 Q14 6 16 8 Q18 10 18 6" opacity="0.5"/>
+      <path d="M20 11 Q20 7 22 9 Q24 11 24 7" opacity="0.4"/>
+    </svg>
+  </h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm Jenny, a junior at <span class="highlight">Baruch College</span> majoring in Computer Information Systems.
+        I'm drawn to consulting and the challenge of using technology and data to solve real problems, improve operations,
+        and support smarter decision-making.
+      </p>
+      <p>
+        Outside the classroom, I'm building experience through <span class="highlight">hackathons, mentorship programs, and fellowship opportunities</span>.
+        I believe in the power of networking, learning from diverse perspectives, and saying yes to new opportunities, even the ones that push me outside my comfort zone.
+      </p>
+      <p>
+        Currently seeking internships and projects where I can continue growing in <span class="highlight">consulting, strategy, and business-focused roles</span>.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">Hackathons Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1st</div>
+        <div class="stat-label">Place — CUNY Civic Tech</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Fellowships & Programs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2027</div>
+        <div class="stat-label">Expected Graduation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+  <h2 class="section-title">
+    Experience
+    <!-- Briefcase doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="14" width="28" height="20" rx="3" fill="rgba(196,149,106,0.1)"/>
+      <path d="M14 14 L14 10 Q14 7 17 7 L23 7 Q26 7 26 10 L26 14"/>
+      <line x1="6" y1="22" x2="34" y2="22"/>
+      <rect x="17" y="20" width="6" height="4" rx="1" fill="var(--caramel)" opacity="0.3"/>
+    </svg>
+  </h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">AI Engineering Fellow</span>
+        <span class="timeline-date">Jan 2026 – Present</span>
+      </div>
+      <div class="timeline-org">CodePath</div>
+      <div class="timeline-desc">
+        Cohort-based training in applied AI — <span class="highlight">prompt engineering, evaluation, and practical ML workflows</span>.
+        Building projects with Python, data cleaning, analysis, and model testing. Communicating results through demos and write-ups.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Career Development Fellow — SEEKR Program</span>
+        <span class="timeline-date">Feb 2026 – Present</span>
+      </div>
+      <div class="timeline-org">BASTA</div>
+      <div class="timeline-desc">
+        Structured career development and skills assessment. Professional networking, career storytelling,
+        and clarifying direction toward business and analytics-focused roles.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Business Brigades Analyst</span>
+        <span class="timeline-date">Feb 2026 – Present</span>
+      </div>
+      <div class="timeline-org">Baruch Business Brigades</div>
+      <div class="timeline-desc">
+        Analyzing business and public sector case studies using data-driven approaches. Identifying KPIs, evaluating
+        operational challenges, and presenting insights through structured team presentations.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Data Analytics Project</span>
+        <span class="timeline-date">Sep 2025 – Present</span>
+      </div>
+      <div class="timeline-org">Baruch College</div>
+      <div class="timeline-desc">
+        Cleaning and analyzing datasets with Python (pandas), pulling data from APIs and CSV files,
+        and translating findings into charts and written summaries.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Club Member</span>
+        <span class="timeline-date">Sep 2025 – Present</span>
+      </div>
+      <div class="timeline-org">Baruch ISACA Cybersecurity Club</div>
+      <div class="timeline-desc">
+        Participating in cybersecurity workshops and community events focused on industry trends, career development,
+        and technical learning. Engaging with peers and professionals to strengthen knowledge of cybersecurity concepts and emerging technologies.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Help Your Math PAL Leader</span>
+        <span class="timeline-date">Dec 2024 – May 2025</span>
+      </div>
+      <div class="timeline-org">Help Your Math</div>
+      <div class="timeline-desc">
+        Assisted with data tracking to support program coordination and instructional planning.
+        Collaborated with instructors to review student-facing content for clarity and usability.
+        Supported structured learning activities and identified common student challenges through observation and feedback.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Math Club President</span>
+        <span class="timeline-date">Aug 2024 – Dec 2024</span>
+      </div>
+      <div class="timeline-org">Math Club</div>
+      <div class="timeline-desc">
+        Led weekly meetings and coordinated activities to increase member engagement.
+        Organized math discussions, problem-solving sessions, and student collaboration.
+        Managed planning and communication to support club events and participation.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Math Club Secretary</span>
+        <span class="timeline-date">Jan 2024 – May 2024</span>
+      </div>
+      <div class="timeline-org">Math Club</div>
+      <div class="timeline-desc">
+        Organized meeting schedules and documented key discussions.
+        Coordinated communication between club members and the leadership team.
+        Supported event planning and member engagement activities.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Sales Operations & CRM Analytics</span>
+        <span class="timeline-date">Jun 2023 – Mar 2024</span>
+      </div>
+      <div class="timeline-org">AIREA Real Estate</div>
+      <div class="timeline-desc">
+        Maintained 300+ client records in Excel, developed tracking spreadsheets for pipeline visibility,
+        and conducted comparative analysis of property listings. <span class="highlight">Improved lead-to-showing conversion by 25%</span>.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Communications & Social Media Organizer</span>
+        <span class="timeline-date">Mar 2021 – Mar 2022</span>
+      </div>
+      <div class="timeline-org">New York City Council</div>
+      <div class="timeline-desc">
+        Coordinated 15+ community events, organized 2,000+ survey responses in Google Sheets, and built PivotTables
+        to segment data by neighborhood. Delivered 3 stakeholder-ready summaries informing outreach planning.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-role">Community Engagement Volunteer</span>
+        <span class="timeline-date">Jan 2021 – Mar 2021</span>
+      </div>
+      <div class="timeline-org">New York City Council</div>
+      <div class="timeline-desc">
+        Created visual content using Canva and TikTok to support community awareness campaigns.
+        Helped translate campaign goals into short-form, audience-friendly content and worked with organizers
+        to align messaging with outreach priorities.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <h2 class="section-title">
+    Projects
+    <!-- Laptop doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="8" width="24" height="18" rx="2" fill="rgba(196,149,106,0.1)"/>
+      <rect x="11" y="11" width="18" height="12" rx="1" fill="rgba(196,149,106,0.05)"/>
+      <path d="M4 26 L36 26 Q36 30 32 30 L8 30 Q4 30 4 26"/>
+      <line x1="17" y1="28" x2="23" y2="28" stroke-width="1"/>
+      <path d="M15 15 L18 18 L15 21" stroke-width="1.2"/>
+      <line x1="20" y1="21" x2="25" y2="21" stroke-width="1"/>
+    </svg>
+  </h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <span class="project-badge badge-winner">1st Place</span>
+      <h3>RootCause</h3>
+      <p>
+        Built at the <span class="highlight">CUNY Civic Tech Hackathon</span>. Used NYC Street Tree Census data to build a triage model
+        that flags the highest-risk sidewalks in Manhattan before damage and lawsuits happen.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Data Analysis</span>
+        <span class="tech-tag">NYC Open Data</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-hackathon">Hackathon</span>
+      <h3>Conversational AI System</h3>
+      <p>
+        Built at HackMHC++ — an interactive conversational AI application from scratch that understands user input
+        and responds in real time, making information more accessible and actionable.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Claude API</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">WebSockets</span>
+        <span class="tech-tag">Google Cloud</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-hackathon">Hackathon</span>
+      <h3>Waypoint</h3>
+      <p>
+        Built at the NYC Build With AI Hackathon at NYU Tandon. A voice-first AI city guide
+        leveraging multi-agent architecture for NYC Open Data Week.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Gemini</span>
+        <span class="tech-tag">AI Agents</span>
+        <span class="tech-tag">NYC Open Data</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-winner">Best Lovable Hack</span>
+      <h3>Mogul Blocks</h3>
+      <p>
+        Built at <span class="highlight">Hack Brooklyn</span>. A turn-based real estate strategy game where players compete against an AI rival
+        with limited action points, dynamic market events, and insider trading mechanics powered by trivia.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Python FastAPI</span>
+        <span class="tech-tag">OpenAI</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-hackathon">Hackathon</span>
+      <h3>TrustLayer</h3>
+      <p>
+        Built at <span class="highlight">Hunter Hackathon</span>. An AI-powered scam protection platform that scores fraud risk, explains red flags
+        in plain language, supports multilingual warnings, and lets users share scam patterns through a community feed.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Next.js</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">OpenAI</span>
+        <span class="tech-tag">Supabase</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-winner">1st Place</span>
+      <h3>Verde Vida Consulting</h3>
+      <p>
+        Placed 1st out of 5 teams in the <span class="highlight">Baruch Business Brigades</span> consulting project.
+        Partnered with a real avocado business in Guatemala to analyze operations and growth opportunities.
+        Built the financial model and led the final presentation in front of EY and KPMG alumni judges.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Financial Modeling</span>
+        <span class="tech-tag">Business Strategy</span>
+        <span class="tech-tag">Consulting</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-competition">Competition</span>
+      <h3>Wells Fargo Early Talent</h3>
+      <p>
+        Developed a solution inspired by real travel experiences around airport lounge access and credit card UX.
+        Focused on how <span class="highlight">financial products can better align with real user behavior</span> and create more personalized value.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Business Strategy</span>
+        <span class="tech-tag">UX Design</span>
+        <span class="tech-tag">FinTech</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <h2 class="section-title">
+    Skills
+    <!-- Chart/graph doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="8" y1="32" x2="8" y2="8"/>
+      <line x1="8" y1="32" x2="34" y2="32"/>
+      <rect x="12" y="22" width="5" height="10" rx="1" fill="rgba(196,149,106,0.2)"/>
+      <rect x="20" y="16" width="5" height="16" rx="1" fill="rgba(196,149,106,0.3)"/>
+      <rect x="28" y="12" width="5" height="20" rx="1" fill="rgba(196,149,106,0.4)"/>
+      <path d="M12 20 L20 14 L28 10" stroke-dasharray="2 2"/>
+    </svg>
+  </h2>
+  <div class="skills-container">
+    <div class="skill-group">
+      <h3>Technical</h3>
+      <ul class="skill-list">
+        <li>Python (pandas, data analysis)</li>
+        <li>SQL</li>
+        <li>Microsoft Excel (PivotTables, modeling)</li>
+        <li>Data Cleaning & Validation</li>
+        <li>API Integration</li>
+        <li>Prompt Engineering</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Tools & Platforms</h3>
+      <ul class="skill-list">
+        <li>Google Cloud</li>
+        <li>FastAPI</li>
+        <li>WebSockets</li>
+        <li>Google Sheets</li>
+        <li>Canva</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Business & Communication</h3>
+      <ul class="skill-list">
+        <li>Data-Driven Decision Making</li>
+        <li>Case Study Analysis</li>
+        <li>Stakeholder Presentations</li>
+        <li>Project Management</li>
+        <li>Team Leadership</li>
+        <li>Networking & Relationship Building</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- EDUCATION -->
+<section id="education" class="fade-in">
+  <h2 class="section-title">
+    Education
+    <!-- Graduation cap doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="20,8 4,18 20,28 36,18" fill="rgba(196,149,106,0.15)"/>
+      <line x1="36" y1="18" x2="36" y2="30"/>
+      <circle cx="36" cy="31" r="1.5" fill="var(--caramel)" opacity="0.4"/>
+      <path d="M12 22 L12 30 Q12 33 20 33 Q28 33 28 30 L28 22"/>
+    </svg>
+  </h2>
+  <div class="edu-card">
+    <div class="edu-icon">B</div>
+    <div class="edu-details">
+      <h3>Baruch College</h3>
+      <div class="degree">Bachelor of Business Administration — Computer Information Systems</div>
+      <div class="year">2024 – 2027 &middot; Junior</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- CERTIFICATIONS -->
+<section class="fade-in">
+  <h2 class="section-title">
+    Certifications
+    <!-- Certificate/scroll doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="8" width="24" height="28" rx="2" fill="rgba(196,149,106,0.1)"/>
+      <line x1="14" y1="14" x2="26" y2="14"/>
+      <line x1="14" y1="19" x2="26" y2="19"/>
+      <line x1="14" y1="24" x2="22" y2="24"/>
+      <circle cx="24" cy="30" r="4" fill="rgba(184,92,56,0.15)" stroke="var(--accent)"/>
+      <path d="M22.5 30 L23.5 31 L26 28.5" stroke="var(--accent)" stroke-width="1.2"/>
+    </svg>
+  </h2>
+  <div class="certs-list">
+    <div class="cert-item">
+      <span class="cert-name">Best Lovable Hack</span>
+      <span class="cert-issuer">Hack Brooklyn</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">FirstGenU Career Institute: Spring 2026</span>
+      <span class="cert-issuer">America Needs You</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">AI in Legal: From Research to Results</span>
+      <span class="cert-issuer">IBM SkillsBuild</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- HAIBAO CAT SECTION -->
+<section id="haibao" class="cat-section fade-in">
+  <div class="cat-section-inner">
+    <h2 class="cat-title">
+      <!-- Cat doodle -->
+      <svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 14 L7 6 L14 11" fill="rgba(196,149,106,0.15)"/>
+        <path d="M30 14 L33 6 L26 11" fill="rgba(196,149,106,0.15)"/>
+        <ellipse cx="20" cy="22" rx="13" ry="12" fill="rgba(196,149,106,0.1)"/>
+        <circle cx="15" cy="19" r="1.5" fill="var(--espresso)"/>
+        <circle cx="25" cy="19" r="1.5" fill="var(--espresso)"/>
+        <ellipse cx="20" cy="22" rx="2" ry="1" fill="rgba(232,196,168,0.5)"/>
+        <path d="M18 23 Q20 25 22 23" stroke-width="1"/>
+        <path d="M12 22 L4 20" stroke-width="0.8" opacity="0.4"/>
+        <path d="M12 24 L5 25" stroke-width="0.8" opacity="0.4"/>
+        <path d="M28 22 L36 20" stroke-width="0.8" opacity="0.4"/>
+        <path d="M28 24 L35 25" stroke-width="0.8" opacity="0.4"/>
+        <path d="M14 34 Q20 38 26 34" stroke-width="1.2"/>
+      </svg>
+      Meet <span class="highlight">Haibao</span>
+    </h2>
+    <p class="cat-subtitle">
+      A <span class="highlight">White Bengal cat</span> — here is a relaxing pause while browsing.
+    </p>
+    <div class="cat-grid">
+      <div class="cat-photo-card">
+        <img src="Cat_1.png" alt="Haibao the cat" style="width:100%; display:block;">
+      </div>
+      <div class="cat-photo-card">
+        <img src="Cat_2.png" alt="Haibao napping" style="width:100%; display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section fade-in">
+  <h2 class="section-title">
+    Contact
+    <!-- Handshake/wave doodle -->
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 24 Q6 20 10 16 Q14 12 18 16 L22 20 Q26 24 22 28 Q18 32 14 28 Z" fill="rgba(196,149,106,0.15)"/>
+      <path d="M18 16 L24 10"/>
+      <path d="M26 8 L28 6" stroke-width="1" opacity="0.5"/>
+      <path d="M30 10 L32 9" stroke-width="1" opacity="0.4"/>
+      <path d="M29 14 L32 14" stroke-width="1" opacity="0.3"/>
+    </svg>
+  </h2>
+  <p class="contact-desc">Always happy to meet new people, exchange ideas, and explore opportunities.</p>
+  <div class="contact-btns">
+    <a href="mailto:jingwen.tau@gmail.com" class="contact-btn">Email Me</a>
+    <a href="https://www.linkedin.com/in/jingwenr/" target="_blank" class="contact-btn outline">View LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/jingwenr/" target="_blank" class="nav-social-link" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/jingwenr2" target="_blank" class="nav-social-link" aria-label="GitHub">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  </div>
+  <p>Jingwen (Jenny) Ruan &middot; Brooklyn, NY &middot; &copy; 2026</p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Stagger timeline items
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+        }, i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  timelineItems.forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-20px)';
+    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    timelineObserver.observe(item);
+  });
+
+  // Cat cursor click blink
+  document.addEventListener('mousedown', () => {
+    document.body.classList.add('cursor-blink');
+  });
+  document.addEventListener('mouseup', () => {
+    document.body.classList.remove('cursor-blink');
+  });
+
+  // Subtle parallax on hero blobs
+  document.addEventListener('mousemove', (e) => {
+    const blobs = document.querySelectorAll('.hero-blob');
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    blobs.forEach((blob, i) => {
+      const speed = (i + 1) * 8;
+      const offsetX = x * speed;
+      const offsetY = y * speed;
+      blob.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>

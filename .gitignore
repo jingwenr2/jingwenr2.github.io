@@ -1,0 +1,6 @@
+# Private documents
+*.pdf
+plan.md
+
+# Mac system files
+.DS_Store
