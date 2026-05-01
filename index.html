@@ -648,6 +648,24 @@
     letter-spacing: 0.03em;
   }
 
+  .timeline-extra { display: none; }
+  .timeline-extra.open { display: block; }
+
+  .show-more-btn {
+    margin-top: 0.5rem;
+    background: none;
+    border: 1px solid var(--caramel);
+    color: var(--caramel);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .show-more-btn:hover { background: var(--caramel); color: var(--ivory); }
+
   .project-link {
     display: inline-flex;
     align-items: center;
@@ -1209,6 +1227,8 @@
       </div>
     </div>
 
+    <div class="timeline-extra" id="timeline-extra">
+
     <div class="timeline-item">
       <div class="timeline-header">
         <span class="timeline-role">Club Member</span>
@@ -1297,6 +1317,10 @@
       </div>
     </div>
 
+    </div><!-- end timeline-extra -->
+
+    <button class="show-more-btn" onclick="toggleTimeline(this)">+ Show more</button>
+
   </div>
 </section>
 
@@ -1334,35 +1358,6 @@
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-hackathon">Hackathon</span>
-      <h3>Conversational AI System</h3>
-      <p>
-        Built at HackMHC++ — an interactive conversational AI application from scratch that understands user input
-        and responds in real time, making information more accessible and actionable.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">Claude API</span>
-        <span class="tech-tag">FastAPI</span>
-        <span class="tech-tag">WebSockets</span>
-        <span class="tech-tag">Google Cloud</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <span class="project-badge badge-hackathon">Hackathon</span>
-      <h3>Waypoint</h3>
-      <p>
-        Built at the NYC Build With AI Hackathon at NYU Tandon. A voice-first AI city guide
-        leveraging multi-agent architecture for NYC Open Data Week.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">Gemini</span>
-        <span class="tech-tag">AI Agents</span>
-        <span class="tech-tag">NYC Open Data</span>
-      </div>
-    </div>
-
-    <div class="project-card">
       <span class="project-badge badge-winner">Best Lovable Hack</span>
       <h3>Mogul Blocks</h3>
       <p>
@@ -1376,6 +1371,21 @@
         <span class="tech-tag">OpenAI</span>
       </div>
       <a href="https://github.com/jingwenr2/Brooklyn-HACK" target="_blank" class="project-link">↗ View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge badge-winner">1st Place</span>
+      <h3>Verde Vida Consulting</h3>
+      <p>
+        Placed 1st out of 5 teams in the <span class="highlight">Baruch Business Brigades</span> consulting project.
+        Partnered with a real avocado business in Guatemala to analyze operations and growth opportunities.
+        Built the financial model and led the final presentation in front of EY and KPMG alumni judges.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Financial Modeling</span>
+        <span class="tech-tag">Business Strategy</span>
+        <span class="tech-tag">Consulting</span>
+      </div>
     </div>
 
     <div class="project-card">
@@ -1395,31 +1405,17 @@
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-winner">1st Place</span>
-      <h3>Verde Vida Consulting</h3>
+      <span class="project-badge badge-hackathon">Hackathon</span>
+      <h3>Waypoint</h3>
       <p>
-        Placed 1st out of 5 teams in the <span class="highlight">Baruch Business Brigades</span> consulting project.
-        Partnered with a real avocado business in Guatemala to analyze operations and growth opportunities.
-        Built the financial model and led the final presentation in front of EY and KPMG alumni judges.
+        Built at the <span class="highlight">NYC Build With AI Hackathon</span> at NYU Tandon. A voice-first conversational AI city guide
+        using multi-agent architecture to make information more accessible and actionable in real time.
       </p>
       <div class="tech-tags">
-        <span class="tech-tag">Financial Modeling</span>
-        <span class="tech-tag">Business Strategy</span>
-        <span class="tech-tag">Consulting</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <span class="project-badge badge-competition">Competition</span>
-      <h3>Wells Fargo Early Talent</h3>
-      <p>
-        Developed a solution inspired by real travel experiences around airport lounge access and credit card UX.
-        Focused on how <span class="highlight">financial products can better align with real user behavior</span> and create more personalized value.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">Business Strategy</span>
-        <span class="tech-tag">UX Design</span>
-        <span class="tech-tag">FinTech</span>
+        <span class="tech-tag">Claude API</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">WebSockets</span>
+        <span class="tech-tag">Google Cloud</span>
       </div>
     </div>
 
@@ -1608,6 +1604,12 @@
 </footer>
 
 <script>
+  function toggleTimeline(btn) {
+    const extra = document.getElementById('timeline-extra');
+    const open = extra.classList.toggle('open');
+    btn.textContent = open ? '− Show less' : '+ Show more';
+  }
+
   // Intersection Observer for fade-in animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
