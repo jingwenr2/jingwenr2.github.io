@@ -1081,6 +1081,102 @@
     font-weight: 300;
   }
 
+  /* ---- RUNNING CAT ---- */
+  .cat-run-button {
+    position: fixed;
+    right: 1.4rem;
+    bottom: 1.4rem;
+    z-index: 120;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(43,122,120,0.22);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.86);
+    color: var(--espresso);
+    box-shadow: 0 12px 30px rgba(20,46,58,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .cat-run-button:hover {
+    transform: translateY(-3px) scale(1.04);
+    border-color: rgba(231,111,81,0.42);
+    box-shadow: 0 16px 36px rgba(20,46,58,0.16);
+  }
+
+  .cat-run-button:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .corner-cat {
+    width: 38px;
+    height: 38px;
+    animation: catIdle 2.8s ease-in-out infinite;
+  }
+
+  .cat-runner {
+    position: fixed;
+    left: -90px;
+    bottom: 1.55rem;
+    z-index: 119;
+    width: 74px;
+    height: 46px;
+    pointer-events: none;
+    animation: catDash 3.2s cubic-bezier(0.22, 0.8, 0.24, 1) forwards;
+  }
+
+  .cat-runner svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 8px 12px rgba(20,46,58,0.16));
+    animation: catStride 0.32s ease-in-out infinite;
+  }
+
+  .paw-print {
+    position: fixed;
+    bottom: 1.25rem;
+    z-index: 118;
+    color: rgba(43,122,120,0.42);
+    font-size: 1.05rem;
+    line-height: 1;
+    pointer-events: none;
+    transform: rotate(var(--paw-rotate, -10deg));
+    animation: pawFade 2.4s ease-out forwards;
+  }
+
+  .paw-print svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+
+  @keyframes catIdle {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-3px) rotate(2deg); }
+  }
+
+  @keyframes catDash {
+    0% { transform: translateX(0); opacity: 0; }
+    8% { opacity: 1; }
+    86% { opacity: 1; }
+    100% { transform: translateX(calc(100vw + 180px)); opacity: 0; }
+  }
+
+  @keyframes catStride {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-5px) rotate(1deg); }
+  }
+
+  @keyframes pawFade {
+    0% { opacity: 0; transform: translateY(4px) scale(0.8) rotate(var(--paw-rotate, -10deg)); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-8px) scale(1.05) rotate(var(--paw-rotate, -10deg)); }
+  }
+
   /* ---- CONTACT ---- */
   .contact-section {
     text-align: center;
@@ -1256,6 +1352,19 @@
     </a>
   </div>
 </nav>
+
+<button class="cat-run-button" type="button" aria-label="Let Haibao run">
+  <svg class="corner-cat" viewBox="0 0 96 64" role="img" aria-hidden="true">
+    <path d="M70 36c10-10 17-12 22-6 4 5 0 13-10 13" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="43" cy="38" rx="30" ry="17" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
+    <circle cx="23" cy="29" r="15" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
+    <path d="M11 17l4-13 9 10M29 14l10-9 1 14" fill="#BFC3CC" stroke="#102A43" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="18" cy="28" r="2.4" fill="#102A43"/>
+    <circle cx="27" cy="28" r="2.4" fill="#102A43"/>
+    <path d="M22 34q3 3 7 0" fill="none" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
+    <path d="M30 52l-3 8M51 53l-1 8M61 50l5 7" fill="none" stroke="#102A43" stroke-width="4" stroke-linecap="round"/>
+  </svg>
+</button>
 
 <!-- HERO -->
 <section class="hero">
@@ -1782,6 +1891,62 @@
   document.addEventListener('mouseup', () => {
     document.body.classList.remove('cursor-blink');
   });
+
+  // Corner cat run animation
+  const catRunButton = document.querySelector('.cat-run-button');
+  const runningCatSvg = `
+    <svg viewBox="0 0 112 70" aria-hidden="true">
+      <path d="M83 38c13-13 22-16 27-8 5 7-1 16-14 15" fill="none" stroke="#102A43" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="50" cy="40" rx="35" ry="19" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
+      <circle cx="24" cy="31" r="16" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
+      <path d="M11 18l5-14 10 11M31 15l11-10 1 15" fill="#BFC3CC" stroke="#102A43" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="18" cy="30" r="2.5" fill="#102A43"/>
+      <circle cx="28" cy="30" r="2.5" fill="#102A43"/>
+      <path d="M22 36q4 3 8 0" fill="none" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
+      <path d="M36 55l-12 9M54 56l10 8M67 53l15 5" fill="none" stroke="#102A43" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  `;
+  const pawPrintSvg = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="8" cy="8" r="2.4" fill="currentColor"/>
+      <circle cx="15" cy="7" r="2.3" fill="currentColor"/>
+      <circle cx="5" cy="14" r="2.1" fill="currentColor"/>
+      <circle cx="18" cy="13" r="2.1" fill="currentColor"/>
+      <ellipse cx="12" cy="16" rx="4.6" ry="3.8" fill="currentColor"/>
+    </svg>
+  `;
+
+  function letCatRun() {
+    if (!catRunButton || catRunButton.disabled) return;
+
+    catRunButton.disabled = true;
+
+    const runner = document.createElement('div');
+    runner.className = 'cat-runner';
+    runner.innerHTML = runningCatSvg;
+    document.body.appendChild(runner);
+
+    const printCount = Math.max(8, Math.floor(window.innerWidth / 130));
+    for (let i = 0; i < printCount; i += 1) {
+      const print = document.createElement('span');
+      print.className = 'paw-print';
+      print.innerHTML = pawPrintSvg;
+      print.style.left = `${8 + i * (84 / Math.max(printCount - 1, 1))}vw`;
+      print.style.animationDelay = `${0.28 + i * 0.16}s`;
+      print.style.setProperty('--paw-rotate', `${i % 2 === 0 ? -14 : 10}deg`);
+      document.body.appendChild(print);
+      print.addEventListener('animationend', () => print.remove(), { once: true });
+    }
+
+    runner.addEventListener('animationend', () => {
+      runner.remove();
+      catRunButton.disabled = false;
+    }, { once: true });
+  }
+
+  if (catRunButton) {
+    catRunButton.addEventListener('click', letCatRun);
+  }
 
   // Subtle parallax on hero blobs
   document.addEventListener('mousemove', (e) => {
