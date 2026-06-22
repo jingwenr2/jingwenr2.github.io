@@ -950,31 +950,54 @@
     border-radius: 12px;
     background: var(--card-bg);
     border: 1px solid rgba(0,0,0,0.04);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
     transition: transform 0.3s ease;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  a.cert-item {
-    color: inherit;
-    text-decoration: none;
+    gap: 1rem;
   }
 
   .cert-item:hover { transform: translateX(4px); }
 
   .cert-name {
+    display: block;
     font-weight: 500;
     color: var(--espresso);
     font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .cert-issuer {
+    display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--caramel);
+    margin-top: 0.35rem;
+  }
+
+  .cert-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    margin-top: 0.65rem;
+    color: var(--slate);
+    font-size: 0.82rem;
+  }
+
+  .cert-link {
+    align-self: center;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .cert-link:hover {
+    color: var(--espresso);
   }
 
   /* ---- CAT SECTION ---- */
@@ -1310,6 +1333,8 @@
     .edu-card { flex-direction: column; text-align: center; gap: 1.5rem; }
     .timeline { padding-left: 2rem; }
     .projects-grid { grid-template-columns: 1fr; }
+    .cert-item { grid-template-columns: 1fr; }
+    .cert-link { justify-self: start; }
     .contact-section { padding: 5rem 1.5rem; }
     .cat-section { padding: 3rem 1.5rem; }
     .cat-section-inner { padding: 2rem; }
@@ -1748,28 +1773,59 @@
   </h2>
   <div class="certs-list">
     <div class="cert-item">
-      <span class="cert-name">Python for Data Science, AI &amp; Development</span>
-      <span class="cert-issuer">IBM &middot; Coursera</span>
+      <div>
+        <span class="cert-name">Google Business Intelligence Professional Certificate</span>
+        <span class="cert-issuer">Google &middot; Coursera</span>
+        <div class="cert-meta">
+          <span>Issued Jun 2026</span>
+          <span>Credential ID CWX0SYULGF7G</span>
+        </div>
+      </div>
+      <a href="https://www.coursera.org/account/accomplishments/specialization/CWX0SYULGF7G" target="_blank" rel="noopener noreferrer" class="cert-link">Show credential ↗</a>
     </div>
     <div class="cert-item">
-      <span class="cert-name">Data Visualization with Python</span>
-      <span class="cert-issuer">IBM &middot; Coursera</span>
-    </div>
-    <a href="https://coursera.org/share/c49b7379811b3da3362acb03adbd1bdd" target="_blank" rel="noopener noreferrer" class="cert-item">
-      <span class="cert-name">Foundations: Data, Data, Everywhere</span>
-      <span class="cert-issuer">Google &middot; Coursera &middot; View credential ↗</span>
-    </a>
-    <div class="cert-item">
-      <span class="cert-name">AI Fluency: Framework &amp; Foundations</span>
-      <span class="cert-issuer">Anthropic &middot; Anthropic Education</span>
-    </div>
-    <div class="cert-item">
-      <span class="cert-name">Best Lovable Hack</span>
-      <span class="cert-issuer">Hack Brooklyn</span>
+      <div>
+        <span class="cert-name">Google Data Analytics Professional Certificate</span>
+        <span class="cert-issuer">Google &middot; Coursera</span>
+        <div class="cert-meta">
+          <span>Issued Jun 2026</span>
+          <span>Credential ID 41QVE683ZL4W</span>
+        </div>
+      </div>
+      <a href="https://www.coursera.org/account/accomplishments/specialization/41QVE683ZL4W" target="_blank" rel="noopener noreferrer" class="cert-link">Show credential ↗</a>
     </div>
     <div class="cert-item">
-      <span class="cert-name">AI in Legal: From Research to Results</span>
-      <span class="cert-issuer">IBM SkillsBuild</span>
+      <div>
+        <span class="cert-name">Data Visualization with Python</span>
+        <span class="cert-issuer">IBM &middot; Coursera</span>
+        <div class="cert-meta">
+          <span>Issued Jun 2026</span>
+          <span>Credential ID T04RZ81WTUZ1</span>
+        </div>
+      </div>
+      <a href="https://www.coursera.org/account/accomplishments/verify/T04RZ81WTUZ1" target="_blank" rel="noopener noreferrer" class="cert-link">Show credential ↗</a>
+    </div>
+    <div class="cert-item">
+      <div>
+        <span class="cert-name">Certificate of Completion: AI Fluency Framework &amp; Foundations</span>
+        <span class="cert-issuer">Anthropic</span>
+        <div class="cert-meta">
+          <span>Issued Jun 2026</span>
+          <span>Credential ID hd4udhjyi87k</span>
+        </div>
+      </div>
+      <a href="https://verify.skilljar.com/c/hd4udhjyi87k" target="_blank" rel="noopener noreferrer" class="cert-link">Show credential ↗</a>
+    </div>
+    <div class="cert-item">
+      <div>
+        <span class="cert-name">BCG - Introduction to Strategy Consulting Job Simulation</span>
+        <span class="cert-issuer">Forage</span>
+        <div class="cert-meta">
+          <span>Issued May 2026</span>
+          <span>Credential ID F38kkqew9Yf7drcCL</span>
+        </div>
+      </div>
+      <a href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/4Rfzeut8gXmNwfxXv_SKZxezskWgmFjRvj9_69bf1c2a9cb059337c78df18_1778622006222_completion_certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">Show credential ↗</a>
     </div>
   </div>
 </section>
