@@ -109,7 +109,7 @@
   .intro-domain {
     min-height: 1.08em;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3.4rem, 12vw, 8.5rem);
+    font-size: clamp(2.15rem, 7.5vw, 5.8rem);
     font-weight: 700;
     line-height: 0.95;
     letter-spacing: 0;
@@ -2046,7 +2046,7 @@
   // Opening intro animation
   const intro = document.querySelector('.site-intro');
   const introType = document.getElementById('intro-type');
-  const introText = 'jenny ruan';
+  const introText = 'JennyRuan57@Gmail.com';
 
   function finishIntro() {
     if (!intro) return;
@@ -2064,11 +2064,11 @@
 
       if (introIndex >= introText.length) {
         clearInterval(typeIntro);
-        setTimeout(finishIntro, 1250);
+        setTimeout(finishIntro, 520);
       }
-    }, 155);
+    }, 62);
 
-    setTimeout(finishIntro, 3300);
+    setTimeout(finishIntro, 2400);
   } else {
     document.body.classList.remove('intro-lock');
   }
