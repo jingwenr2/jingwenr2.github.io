@@ -252,6 +252,16 @@
     overflow: hidden;
   }
 
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(115deg, rgba(16,42,67,0.08), transparent 42%),
+      radial-gradient(circle at 18% 28%, rgba(255,47,146,0.14), transparent 24%);
+    pointer-events: none;
+  }
+
   /* Decorative blobs */
   .hero-blob {
     position: absolute;
@@ -398,11 +408,18 @@
   }
 
   .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.42rem 0.8rem;
+    border-radius: 999px;
+    background: #07070b;
+    box-shadow: 0 0 0 1px rgba(255,47,146,0.22), 0 12px 30px rgba(16,42,67,0.12);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: #ff4fad;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.3s forwards;
@@ -436,6 +453,83 @@
     animation: fadeUp 0.8s ease 0.7s forwards;
   }
 
+  .hero-focus {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+    color: var(--espresso);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.78s forwards;
+  }
+
+  .hero-focus span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-focus span:not(:last-child)::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #ff4fad;
+    box-shadow: 0 0 16px rgba(255,47,146,0.7);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.7rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.86s forwards;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.78rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  }
+
+  .hero-btn.primary {
+    background: #07070b;
+    color: #fff;
+    border: 2px solid #07070b;
+    box-shadow: 0 14px 34px rgba(16,42,67,0.16), 0 0 0 1px rgba(255,47,146,0.18);
+  }
+
+  .hero-btn.secondary {
+    background: rgba(255,255,255,0.66);
+    color: var(--espresso);
+    border: 2px solid rgba(255,47,146,0.32);
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(16,42,67,0.16);
+  }
+
+  .hero-btn.primary:hover {
+    background: #ff2f92;
+    border-color: #ff2f92;
+  }
+
   .hero-pills {
     display: flex;
     gap: 0.75rem;
@@ -457,11 +551,62 @@
   }
 
   .pill:hover {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: #ff2f92;
+    border-color: #ff2f92;
     color: #fff;
     transform: translateY(-2px);
   }
+
+  /* ---- CURRENTLY BUILDING ---- */
+  .building-strip {
+    max-width: 1200px;
+    margin: -2rem auto 0;
+    padding: 0 3rem 3rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .building-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.4rem;
+    align-items: center;
+    padding: 1.35rem 1.5rem;
+    border-radius: 18px;
+    background: #07070b;
+    color: #fff;
+    border: 1px solid rgba(255,47,146,0.34);
+    box-shadow: 0 18px 48px rgba(16,42,67,0.18);
+  }
+
+  .building-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #ff4fad;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .building-card p {
+    color: rgba(255,255,255,0.78);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .building-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .building-link:hover { color: #ff4fad; }
 
   .scroll-indicator {
     position: absolute;
@@ -581,7 +726,7 @@
   }
 
   .aws-panel {
-    background: linear-gradient(135deg, rgba(125,181,204,0.28), rgba(247,250,252,0.86) 48%, rgba(183,224,216,0.22));
+    background: linear-gradient(135deg, rgba(255,47,146,0.1), rgba(247,250,252,0.92) 44%, rgba(183,224,216,0.22));
     border: 1px solid rgba(43,122,120,0.22);
     border-radius: 24px;
     padding: 3rem;
@@ -629,21 +774,22 @@
     min-height: 48px;
     padding: 0.85rem 1.4rem;
     border-radius: 100px;
-    background: var(--espresso);
+    background: #07070b;
     color: var(--ivory);
     text-decoration: none;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border: 2px solid var(--espresso);
+    border: 2px solid #07070b;
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     white-space: nowrap;
   }
 
   .aws-cta:hover {
-    background: transparent;
-    color: var(--espresso);
+    background: #ff2f92;
+    border-color: #ff2f92;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(20,46,58,0.12);
   }
@@ -850,8 +996,8 @@
   .project-card {
     padding: 2.5rem;
     border-radius: 20px;
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.04);
+    background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.64));
+    border: 1px solid rgba(16,42,67,0.07);
     backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     position: relative;
@@ -865,8 +1011,8 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--caramel));
-    opacity: 0;
+    background: linear-gradient(90deg, #ff2f92, var(--caramel));
+    opacity: 0.85;
     transition: opacity 0.3s ease;
   }
 
@@ -877,6 +1023,23 @@
 
   .project-card:hover::before { opacity: 1; }
 
+  .project-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--caramel);
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+
   .project-badge {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -885,7 +1048,8 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    white-space: nowrap;
   }
 
   .badge-winner {
@@ -908,7 +1072,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--espresso);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
   }
 
   .project-card p {
@@ -916,6 +1080,17 @@
     color: var(--slate);
     font-weight: 300;
     margin-bottom: 1.2rem;
+  }
+
+  .project-impact {
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: rgba(255,47,146,0.08);
+    color: var(--espresso);
+    font-size: 0.86rem;
+    line-height: 1.55;
+    border: 1px solid rgba(255,47,146,0.15);
   }
 
   .tech-tags {
@@ -1455,6 +1630,10 @@
     nav .nav-links { gap: 1.2rem; }
     nav .nav-links a { font-size: 0.75rem; }
     .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-focus span:not(:last-child)::after { width: 6px; height: 6px; }
+    .building-strip { padding: 0 1.5rem 2rem; margin-top: -1rem; }
+    .building-card { grid-template-columns: 1fr; gap: 0.75rem; }
+    .building-link { justify-self: start; }
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .aws-panel { padding: 2rem; }
@@ -1464,6 +1643,8 @@
     .edu-card { flex-direction: column; text-align: center; gap: 1.5rem; }
     .timeline { padding-left: 2rem; }
     .projects-grid { grid-template-columns: 1fr; }
+    .project-head { flex-direction: column; gap: 0.75rem; }
+    .project-badge { white-space: normal; }
     .cert-item { grid-template-columns: 1fr; }
     .cert-link { justify-self: start; }
     .contact-section { padding: 5rem 1.5rem; }
@@ -1542,12 +1723,21 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <p class="hero-tag">Computer Information Systems student building data, AI, and web projects.</p>
-      <h1>Jenny<br><em>Jingwen</em> Ruan</h1>
+      <p class="hero-tag">Computer Information Systems student</p>
+      <h1>Jenny<br><em>R</em></h1>
       <p class="hero-desc">
-        I enjoy using <span class="highlight">technology to solve real problems</span>, work with data,
-        and build simple tools that people can actually use.
+        I build data, AI, cloud, and web projects that turn messy problems into simple tools people can actually use.
       </p>
+      <div class="hero-focus">
+        <span>Data</span>
+        <span>AI</span>
+        <span>Cloud</span>
+        <span>Web</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="hero-btn primary">View Projects</a>
+        <a href="#contact" class="hero-btn secondary">Contact Me</a>
+      </div>
       <div class="hero-pills">
         <span class="pill">Data Analysis</span>
         <span class="pill">Python</span>
@@ -1566,6 +1756,15 @@
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<!-- CURRENTLY BUILDING -->
+<div class="building-strip fade-in">
+  <div class="building-card">
+    <span class="building-label">Currently Building</span>
+    <p>AI scam protection tools, data dashboards, cloud learning resources, and practical web projects for students and communities.</p>
+    <a href="#projects" class="building-link">See work ↗</a>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about" class="fade-in">
@@ -1624,14 +1823,14 @@
     <div class="aws-header">
       <div>
         <p class="aws-kicker">AWS Student Builder &middot; Baruch College</p>
-        <h2 class="aws-title">Cloud learning, campus resources, and AWS community building.</h2>
+        <h2 class="aws-title">Start learning cloud with AWS.</h2>
         <p class="aws-intro">
           As an <span class="highlight">AWS Student Builder Campus Leader</span>, I help students find beginner-friendly cloud resources,
-          create their AWS learning account, and connect through events that make cloud skills feel more approachable.
+          create their learning account, and feel less intimidated by their first cloud project.
         </p>
       </div>
       <!-- Update AWS links in this section as resources change. -->
-      <a href="https://bit.ly/4c75FPX" target="_blank" rel="noopener noreferrer" class="aws-cta">Sign Up for AWS Learning</a>
+      <a href="https://bit.ly/4c75FPX" target="_blank" rel="noopener noreferrer" class="aws-cta">Join with my AWS Builder link</a>
     </div>
 
     <div class="aws-cards">
@@ -1640,7 +1839,7 @@
           <span class="aws-card-icon">AWS</span>
           <h3>AWS Student Builder</h3>
           <p>
-            Start here to create your AWS learning account through my student builder link and begin exploring cloud basics.
+            Create your AWS learning account through my builder link and start with beginner-friendly cloud basics.
           </p>
         </div>
         <span class="aws-card-link">Create account ↗</span>
@@ -1651,7 +1850,7 @@
           <span class="aws-card-icon">101</span>
           <h3>Cloud Learning Resources</h3>
           <p>
-            After signing up, use the guided student resources to practice, build confidence, and choose your first cloud pathway.
+            Use guided student resources to practice, build confidence, and choose a first cloud pathway.
           </p>
         </div>
         <span class="aws-card-link">Get started ↗</span>
@@ -1662,7 +1861,7 @@
           <span class="aws-card-icon">NYC</span>
           <h3>Events &amp; Campus Activities</h3>
           <p>
-            Follow updates on workshops, campus conversations, and community moments around cloud, data, and careers.
+            Follow workshops, campus conversations, and community moments around cloud, data, and careers.
           </p>
         </div>
         <span class="aws-card-link">See updates ↗</span>
@@ -1735,13 +1934,18 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <span class="project-badge badge-winner">1st Place out of 20+ Teams</span>
-      <h3>RootCause</h3>
+      <div class="project-head">
+        <div>
+          <div class="project-type">Risk Data Analytics Dashboard</div>
+          <h3>RootCause</h3>
+        </div>
+        <span class="project-badge badge-winner">1st Place</span>
+      </div>
       <p>
-        <span class="highlight">Risk Data Analytics Dashboard.</span> RootCause uses NYC Street Tree Census data.
-        My team cleaned over 684K records and built a geospatial dashboard to find sidewalk risk patterns.
-        This project placed 1st out of 20+ teams at Baruch Datathon.
+        RootCause uses NYC Street Tree Census data to uncover sidewalk risk patterns.
+        My team cleaned over 684K records and built a geospatial dashboard for analysis.
       </p>
+      <div class="project-impact">Impact: 1st Place out of 20+ teams at Baruch Datathon.</div>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
         <span class="tech-tag">Pandas</span>
@@ -1753,12 +1957,18 @@
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-hackathon">Real-Time Conversational AI</span>
-      <h3>Waypoint</h3>
+      <div class="project-head">
+        <div>
+          <div class="project-type">Real-Time Conversational AI</div>
+          <h3>Waypoint</h3>
+        </div>
+        <span class="project-badge badge-hackathon">AI App</span>
+      </div>
       <p>
         Waypoint is a real-time AI application that supports voice and text interaction.
-        I worked on backend systems using FastAPI and WebSockets for real-time communication.
+        I worked on backend systems for real-time communication.
       </p>
+      <div class="project-impact">Focus: FastAPI and WebSockets backend flow for live voice and text interaction.</div>
       <div class="tech-tags">
         <span class="tech-tag">Claude API</span>
         <span class="tech-tag">Google Cloud</span>
@@ -1769,12 +1979,18 @@
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-winner">Best Lovable Project</span>
-      <h3>Mogul Blocks</h3>
+      <div class="project-head">
+        <div>
+          <div class="project-type">Real Estate Strategy Game</div>
+          <h3>Mogul Blocks</h3>
+        </div>
+        <span class="project-badge badge-winner">Winner</span>
+      </div>
       <p>
         Mogul Blocks is a full-stack strategy game that simulates real estate market decisions.
         My team built it during Hack Brooklyn.
       </p>
+      <div class="project-impact">Achievement: Best Lovable Project at Hack Brooklyn.</div>
       <div class="tech-tags">
         <span class="tech-tag">React</span>
         <span class="tech-tag">TypeScript</span>
@@ -1786,13 +2002,19 @@
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-hackathon">AI Scam Protection Platform</span>
-      <h3>TrustLayer</h3>
+      <div class="project-head">
+        <div>
+          <div class="project-type">AI Scam Protection Platform</div>
+          <h3>TrustLayer</h3>
+        </div>
+        <span class="project-badge badge-hackathon">Safety Tech</span>
+      </div>
       <p>
         TrustLayer helps people detect, understand, and share scam warnings before they get tricked.
-        The platform checks suspicious messages, gives a scam risk score, explains red flags in simple language,
-        and supports multilingual warnings for different communities.
+        It checks suspicious messages, gives a scam risk score, explains red flags in plain language,
+        and supports multilingual warnings.
       </p>
+      <div class="project-impact">Purpose: make scam detection clearer and more accessible for different communities.</div>
       <div class="tech-tags">
         <span class="tech-tag">Next.js</span>
         <span class="tech-tag">React</span>
