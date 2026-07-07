@@ -7,16 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ivory: #F7FAFC;
-    --warm-black: #102A43;
-    --espresso: #17324D;
-    --caramel: #2B7A78;
-    --blush: #7DB5CC;
-    --sage: #4F9D69;
-    --sage-light: #B7E0D8;
-    --slate: #536B78;
-    --cream: #EAF3F6;
-    --accent: #E76F51;
+    --ivory: #FFF8FC;
+    --warm-black: #141014;
+    --espresso: #1F1822;
+    --caramel: #C72C73;
+    --blush: #FF9ACD;
+    --sage: #7A294F;
+    --sage-light: #FFD6E8;
+    --slate: #6F5B68;
+    --cream: #FFF0F6;
+    --accent: #FF2F92;
     --card-bg: rgba(255,255,255,0.72);
   }
 
@@ -172,7 +172,7 @@
 
   /* ---- HIGHLIGHT STYLE ---- */
   .highlight {
-    background: linear-gradient(104deg, transparent 0.9%, rgba(125,181,204,0.45) 2.4%, rgba(125,181,204,0.3) 5.8%, rgba(125,181,204,0.45) 93%, transparent 96%);
+    background: linear-gradient(104deg, transparent 0.9%, rgba(255,79,173,0.45) 2.4%, rgba(255,79,173,0.3) 5.8%, rgba(255,79,173,0.45) 93%, transparent 96%);
     border-radius: 4px;
     padding: 0.1em 0.2em;
     -webkit-box-decoration-break: clone;
@@ -276,7 +276,7 @@
   .blob-1 {
     width: 420px;
     height: 420px;
-    background: radial-gradient(circle at 30% 40%, var(--blush), rgba(125,181,204,0.2));
+    background: radial-gradient(circle at 30% 40%, var(--blush), rgba(255,79,173,0.2));
     top: -80px;
     right: -60px;
     border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
@@ -286,7 +286,7 @@
   .blob-2 {
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle at 60% 30%, var(--sage-light), rgba(183,224,216,0.15));
+    background: radial-gradient(circle at 60% 30%, var(--sage-light), rgba(255,214,232,0.15));
     bottom: 60px;
     right: 15%;
     border-radius: 44% 56% 63% 37% / 55% 38% 62% 45%;
@@ -296,7 +296,7 @@
   .blob-3 {
     width: 220px;
     height: 220px;
-    background: radial-gradient(circle at 50% 50%, var(--caramel), rgba(43,122,120,0.1));
+    background: radial-gradient(circle at 50% 50%, var(--caramel), rgba(199,44,115,0.1));
     top: 30%;
     right: 30%;
     border-radius: 50% 50% 36% 64% / 43% 60% 40% 57%;
@@ -318,7 +318,7 @@
   .blob-5 {
     width: 100px;
     height: 100px;
-    background: radial-gradient(circle, var(--cream), rgba(230,244,241,0.1));
+    background: radial-gradient(circle, var(--cream), rgba(255,240,246,0.1));
     bottom: 20%;
     left: 10%;
     border-radius: 40% 60% 50% 50% / 55% 40% 60% 45%;
@@ -726,8 +726,8 @@
   }
 
   .aws-panel {
-    background: linear-gradient(135deg, rgba(255,47,146,0.1), rgba(247,250,252,0.92) 44%, rgba(183,224,216,0.22));
-    border: 1px solid rgba(43,122,120,0.22);
+    background: linear-gradient(135deg, rgba(255,47,146,0.1), rgba(247,250,252,0.92) 44%, rgba(255,214,232,0.22));
+    border: 1px solid rgba(199,44,115,0.22);
     border-radius: 24px;
     padding: 3rem;
     box-shadow: 0 18px 54px rgba(20,46,58,0.06);
@@ -814,7 +814,7 @@
     padding: 1.6rem;
     border-radius: 16px;
     background: rgba(255,255,255,0.68);
-    border: 1px solid rgba(43,122,120,0.24);
+    border: 1px solid rgba(199,44,115,0.24);
     color: inherit;
     text-decoration: none;
     position: relative;
@@ -1058,13 +1058,13 @@
   }
 
   .badge-hackathon {
-    background: #EAF3F6;
+    background: #FFF0F6;
     color: var(--accent);
   }
 
   .badge-competition {
-    background: #E8F1FF;
-    color: #3D5A80;
+    background: #FFF0F6;
+    color: #7A294F;
   }
 
   .project-card h3 {
@@ -1185,7 +1185,7 @@
   .edu-card {
     padding: 3rem;
     border-radius: 20px;
-    background: linear-gradient(135deg, var(--card-bg), rgba(125,181,204,0.15));
+    background: linear-gradient(135deg, var(--card-bg), rgba(255,79,173,0.15));
     border: 1px solid rgba(0,0,0,0.04);
     display: flex;
     gap: 3rem;
@@ -1299,7 +1299,7 @@
   }
 
   .cat-section-inner {
-    background: linear-gradient(135deg, rgba(125,181,204,0.12), rgba(183,224,216,0.12));
+    background: linear-gradient(135deg, rgba(255,79,173,0.12), rgba(255,214,232,0.12));
     border-radius: 28px;
     padding: 3.5rem;
     border: 1px solid rgba(0,0,0,0.04);
@@ -1314,7 +1314,7 @@
     right: -30px;
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle, rgba(125,181,204,0.2), transparent);
+    background: radial-gradient(circle, rgba(255,79,173,0.2), transparent);
     border-radius: 50%;
   }
 
@@ -1403,7 +1403,7 @@
     z-index: 120;
     width: 58px;
     height: 58px;
-    border: 1px solid rgba(43,122,120,0.22);
+    border: 1px solid rgba(199,44,115,0.22);
     border-radius: 50%;
     background: rgba(255,255,255,0.86);
     color: var(--espresso);
@@ -1454,7 +1454,7 @@
     position: fixed;
     bottom: 1.25rem;
     z-index: 118;
-    color: rgba(43,122,120,0.42);
+    color: rgba(199,44,115,0.42);
     font-size: 1.05rem;
     line-height: 1;
     pointer-events: none;
@@ -1702,13 +1702,13 @@
 <button class="cat-run-button" type="button" aria-label="Let Haibao run">
   <svg class="corner-cat" viewBox="0 0 96 64" role="img" aria-hidden="true">
     <path d="M70 36c10-10 17-12 22-6 4 5 0 13-10 13" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-    <ellipse cx="43" cy="38" rx="30" ry="17" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
-    <circle cx="23" cy="29" r="15" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
-    <path d="M11 17l4-13 9 10M29 14l10-9 1 14" fill="#BFC3CC" stroke="#102A43" stroke-width="3" stroke-linejoin="round"/>
-    <circle cx="18" cy="28" r="2.4" fill="#102A43"/>
-    <circle cx="27" cy="28" r="2.4" fill="#102A43"/>
-    <path d="M22 34q3 3 7 0" fill="none" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
-    <path d="M30 52l-3 8M51 53l-1 8M61 50l5 7" fill="none" stroke="#102A43" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="43" cy="38" rx="30" ry="17" fill="#BFC3CC" stroke="#1F1822" stroke-width="3"/>
+    <circle cx="23" cy="29" r="15" fill="#BFC3CC" stroke="#1F1822" stroke-width="3"/>
+    <path d="M11 17l4-13 9 10M29 14l10-9 1 14" fill="#BFC3CC" stroke="#1F1822" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="18" cy="28" r="2.4" fill="#1F1822"/>
+    <circle cx="27" cy="28" r="2.4" fill="#1F1822"/>
+    <path d="M22 34q3 3 7 0" fill="none" stroke="#1F1822" stroke-width="2" stroke-linecap="round"/>
+    <path d="M30 52l-3 8M51 53l-1 8M61 50l5 7" fill="none" stroke="#1F1822" stroke-width="4" stroke-linecap="round"/>
   </svg>
 </button>
 
@@ -1772,7 +1772,7 @@
     About
     <!-- Coffee cup doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M8 15 L8 30 Q8 34 12 34 L24 34 Q28 34 28 30 L28 15" fill="rgba(43,122,120,0.1)"/>
+      <path d="M8 15 L8 30 Q8 34 12 34 L24 34 Q28 34 28 30 L28 15" fill="rgba(199,44,115,0.1)"/>
       <path d="M28 18 Q34 18 34 23 Q34 28 28 28"/>
       <path d="M6 15 L30 15"/>
       <path d="M14 10 Q14 6 16 8 Q18 10 18 6" opacity="0.5"/>
@@ -1878,7 +1878,7 @@
     Experience
     <!-- Briefcase doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="6" y="14" width="28" height="20" rx="3" fill="rgba(43,122,120,0.1)"/>
+      <rect x="6" y="14" width="28" height="20" rx="3" fill="rgba(199,44,115,0.1)"/>
       <path d="M14 14 L14 10 Q14 7 17 7 L23 7 Q26 7 26 10 L26 14"/>
       <line x1="6" y1="22" x2="34" y2="22"/>
       <rect x="17" y="20" width="6" height="4" rx="1" fill="var(--caramel)" opacity="0.3"/>
@@ -1923,8 +1923,8 @@
     Projects
     <!-- Laptop doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="8" y="8" width="24" height="18" rx="2" fill="rgba(43,122,120,0.1)"/>
-      <rect x="11" y="11" width="18" height="12" rx="1" fill="rgba(43,122,120,0.05)"/>
+      <rect x="8" y="8" width="24" height="18" rx="2" fill="rgba(199,44,115,0.1)"/>
+      <rect x="11" y="11" width="18" height="12" rx="1" fill="rgba(199,44,115,0.05)"/>
       <path d="M4 26 L36 26 Q36 30 32 30 L8 30 Q4 30 4 26"/>
       <line x1="17" y1="28" x2="23" y2="28" stroke-width="1"/>
       <path d="M15 15 L18 18 L15 21" stroke-width="1.2"/>
@@ -2041,9 +2041,9 @@
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <line x1="8" y1="32" x2="8" y2="8"/>
       <line x1="8" y1="32" x2="34" y2="32"/>
-      <rect x="12" y="22" width="5" height="10" rx="1" fill="rgba(43,122,120,0.2)"/>
-      <rect x="20" y="16" width="5" height="16" rx="1" fill="rgba(43,122,120,0.3)"/>
-      <rect x="28" y="12" width="5" height="20" rx="1" fill="rgba(43,122,120,0.4)"/>
+      <rect x="12" y="22" width="5" height="10" rx="1" fill="rgba(199,44,115,0.2)"/>
+      <rect x="20" y="16" width="5" height="16" rx="1" fill="rgba(199,44,115,0.3)"/>
+      <rect x="28" y="12" width="5" height="20" rx="1" fill="rgba(199,44,115,0.4)"/>
       <path d="M12 20 L20 14 L28 10" stroke-dasharray="2 2"/>
     </svg>
   </h2>
@@ -2101,7 +2101,7 @@
     Education
     <!-- Graduation cap doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="20,8 4,18 20,28 36,18" fill="rgba(43,122,120,0.15)"/>
+      <polygon points="20,8 4,18 20,28 36,18" fill="rgba(199,44,115,0.15)"/>
       <line x1="36" y1="18" x2="36" y2="30"/>
       <circle cx="36" cy="31" r="1.5" fill="var(--caramel)" opacity="0.4"/>
       <path d="M12 22 L12 30 Q12 33 20 33 Q28 33 28 30 L28 22"/>
@@ -2125,7 +2125,7 @@
     Certifications
     <!-- Certificate/scroll doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="8" y="8" width="24" height="28" rx="2" fill="rgba(43,122,120,0.1)"/>
+      <rect x="8" y="8" width="24" height="28" rx="2" fill="rgba(199,44,115,0.1)"/>
       <line x1="14" y1="14" x2="26" y2="14"/>
       <line x1="14" y1="19" x2="26" y2="19"/>
       <line x1="14" y1="24" x2="22" y2="24"/>
@@ -2200,12 +2200,12 @@
     <h2 class="cat-title">
       <!-- Cat doodle -->
       <svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M10 14 L7 6 L14 11" fill="rgba(43,122,120,0.15)"/>
-        <path d="M30 14 L33 6 L26 11" fill="rgba(43,122,120,0.15)"/>
-        <ellipse cx="20" cy="22" rx="13" ry="12" fill="rgba(43,122,120,0.1)"/>
+        <path d="M10 14 L7 6 L14 11" fill="rgba(199,44,115,0.15)"/>
+        <path d="M30 14 L33 6 L26 11" fill="rgba(199,44,115,0.15)"/>
+        <ellipse cx="20" cy="22" rx="13" ry="12" fill="rgba(199,44,115,0.1)"/>
         <circle cx="15" cy="19" r="1.5" fill="var(--espresso)"/>
         <circle cx="25" cy="19" r="1.5" fill="var(--espresso)"/>
-        <ellipse cx="20" cy="22" rx="2" ry="1" fill="rgba(125,181,204,0.5)"/>
+        <ellipse cx="20" cy="22" rx="2" ry="1" fill="rgba(255,79,173,0.5)"/>
         <path d="M18 23 Q20 25 22 23" stroke-width="1"/>
         <path d="M12 22 L4 20" stroke-width="0.8" opacity="0.4"/>
         <path d="M12 24 L5 25" stroke-width="0.8" opacity="0.4"/>
@@ -2237,7 +2237,7 @@
     Contact
     <!-- Handshake/wave doodle -->
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M10 24 Q6 20 10 16 Q14 12 18 16 L22 20 Q26 24 22 28 Q18 32 14 28 Z" fill="rgba(43,122,120,0.15)"/>
+      <path d="M10 24 Q6 20 10 16 Q14 12 18 16 L22 20 Q26 24 22 28 Q18 32 14 28 Z" fill="rgba(199,44,115,0.15)"/>
       <path d="M18 16 L24 10"/>
       <path d="M26 8 L28 6" stroke-width="1" opacity="0.5"/>
       <path d="M30 10 L32 9" stroke-width="1" opacity="0.4"/>
@@ -2344,14 +2344,14 @@
   const catRunButton = document.querySelector('.cat-run-button');
   const runningCatSvg = `
     <svg viewBox="0 0 112 70" aria-hidden="true">
-      <path d="M83 38c13-13 22-16 27-8 5 7-1 16-14 15" fill="none" stroke="#102A43" stroke-width="5" stroke-linecap="round"/>
-      <ellipse cx="50" cy="40" rx="35" ry="19" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
-      <circle cx="24" cy="31" r="16" fill="#BFC3CC" stroke="#102A43" stroke-width="3"/>
-      <path d="M11 18l5-14 10 11M31 15l11-10 1 15" fill="#BFC3CC" stroke="#102A43" stroke-width="3" stroke-linejoin="round"/>
-      <circle cx="18" cy="30" r="2.5" fill="#102A43"/>
-      <circle cx="28" cy="30" r="2.5" fill="#102A43"/>
-      <path d="M22 36q4 3 8 0" fill="none" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
-      <path d="M36 55l-12 9M54 56l10 8M67 53l15 5" fill="none" stroke="#102A43" stroke-width="4" stroke-linecap="round"/>
+      <path d="M83 38c13-13 22-16 27-8 5 7-1 16-14 15" fill="none" stroke="#1F1822" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="50" cy="40" rx="35" ry="19" fill="#BFC3CC" stroke="#1F1822" stroke-width="3"/>
+      <circle cx="24" cy="31" r="16" fill="#BFC3CC" stroke="#1F1822" stroke-width="3"/>
+      <path d="M11 18l5-14 10 11M31 15l11-10 1 15" fill="#BFC3CC" stroke="#1F1822" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="18" cy="30" r="2.5" fill="#1F1822"/>
+      <circle cx="28" cy="30" r="2.5" fill="#1F1822"/>
+      <path d="M22 36q4 3 8 0" fill="none" stroke="#1F1822" stroke-width="2" stroke-linecap="round"/>
+      <path d="M36 55l-12 9M54 56l10 8M67 53l15 5" fill="none" stroke="#1F1822" stroke-width="4" stroke-linecap="round"/>
     </svg>
   `;
   const pawPrintSvg = `
