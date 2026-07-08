@@ -1385,8 +1385,63 @@
     font-size: 1rem;
     color: var(--slate);
     font-weight: 300;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.2rem;
     line-height: 1.7;
+  }
+
+  .haibao-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-bottom: 2rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: 999px;
+    border: 2px solid #07070b;
+    background: #07070b;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 12px 28px rgba(31,24,34,0.14), 0 0 18px rgba(255,47,146,0.18);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .haibao-toggle:hover {
+    background: #ff2f92;
+    border-color: #ff2f92;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(31,24,34,0.16), 0 0 22px rgba(255,47,146,0.25);
+  }
+
+  .haibao-feature {
+    display: none;
+    margin-bottom: 2rem;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(255,47,146,0.22);
+    box-shadow: 0 18px 44px rgba(31,24,34,0.12);
+  }
+
+  .haibao-feature.show {
+    display: block;
+    animation: fadeUp 0.55s ease both;
+  }
+
+  .haibao-feature img {
+    width: 100%;
+    max-height: 520px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .haibao-feature-caption {
+    padding: 1rem 1.3rem;
+    color: var(--slate);
+    font-size: 0.9rem;
   }
 
   .cat-grid {
@@ -2292,6 +2347,11 @@
     <p class="cat-subtitle">
       A <span class="highlight">White Bengal cat</span> — here is a relaxing pause while browsing.
     </p>
+    <button class="haibao-toggle" type="button" aria-expanded="false" aria-controls="haibao-feature">Meet Haibao</button>
+    <div class="haibao-feature" id="haibao-feature">
+      <img src="haibao-meet.jpg" alt="Close-up photo of Haibao the cat">
+      <div class="haibao-feature-caption">Haibao says hello, very dramatically.</div>
+    </div>
     <div class="cat-grid">
       <div class="cat-photo-card">
         <img src="Cat_1.png" alt="Haibao the cat" style="width:100%; display:block;">
@@ -2468,6 +2528,18 @@
 
   if (catRunButton) {
     catRunButton.addEventListener('click', letCatRun);
+  }
+
+  // Reveal Haibao photo
+  const haibaoToggle = document.querySelector('.haibao-toggle');
+  const haibaoFeature = document.getElementById('haibao-feature');
+
+  if (haibaoToggle && haibaoFeature) {
+    haibaoToggle.addEventListener('click', () => {
+      const isOpen = haibaoFeature.classList.toggle('show');
+      haibaoToggle.setAttribute('aria-expanded', String(isOpen));
+      haibaoToggle.textContent = isOpen ? 'Hide Haibao' : 'Meet Haibao';
+    });
   }
 
   // Subtle parallax on hero blobs
