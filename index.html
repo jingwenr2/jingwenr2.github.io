@@ -1358,6 +1358,167 @@
     color: var(--espresso);
   }
 
+  /* ---- SNAKE GAME ---- */
+  .game-section {
+    max-width: 1200px;
+  }
+
+  .snake-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 28px;
+    background: #07070b;
+    color: #fff;
+    border: 1px solid rgba(255,47,146,0.28);
+    box-shadow: 0 22px 58px rgba(31,24,34,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .snake-panel::before {
+    content: '';
+    position: absolute;
+    inset: -35%;
+    background:
+      radial-gradient(circle at 20% 25%, rgba(255,47,146,0.28), transparent 28%),
+      radial-gradient(circle at 80% 70%, rgba(255,154,205,0.18), transparent 30%);
+    pointer-events: none;
+  }
+
+  .snake-copy,
+  .snake-game {
+    position: relative;
+    z-index: 1;
+  }
+
+  .snake-copy h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 28px rgba(255,47,146,0.34);
+  }
+
+  .snake-copy p {
+    max-width: 520px;
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .snake-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .snake-stat {
+    min-width: 104px;
+    padding: 0.75rem 0.9rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .snake-stat span {
+    display: block;
+    color: #ff9acd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .snake-stat strong {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .snake-game {
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .snake-canvas-wrap {
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    padding: 0.75rem;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255,47,146,0.28), rgba(255,255,255,0.08));
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+
+  #snake-board {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 16px;
+    background: #120b13;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+  }
+
+  .snake-controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .snake-btn,
+  .snake-dir {
+    border: 0;
+    background: #fff;
+    color: #07070b;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .snake-btn {
+    min-height: 42px;
+    padding: 0.72rem 1rem;
+  }
+
+  .snake-btn:hover,
+  .snake-dir:hover {
+    background: #ff2f92;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .snake-dpad {
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 0.35rem;
+  }
+
+  .snake-dir {
+    min-width: 44px;
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .snake-dir.up { grid-column: 2; grid-row: 1; }
+  .snake-dir.left { grid-column: 1; grid-row: 2; }
+  .snake-dir.right { grid-column: 3; grid-row: 2; }
+  .snake-dir.down { grid-column: 2; grid-row: 3; }
+
   /* ---- CAT SECTION ---- */
   .cat-section {
     padding: 5rem 3rem;
@@ -1771,6 +1932,8 @@
     .project-badge { white-space: normal; }
     .cert-item { grid-template-columns: 1fr; }
     .cert-link { justify-self: start; }
+    .snake-panel { grid-template-columns: 1fr; padding: 1.4rem; }
+    .snake-canvas-wrap { width: min(100%, 360px); }
     .contact-section { padding: 5rem 1.5rem; }
     .cat-section { padding: 3rem 1.5rem; }
     .cat-section-inner { padding: 2rem; }
@@ -1787,6 +1950,9 @@
     .hero h1 { font-size: 2.5rem; }
     .intro-card { padding: 3rem 1rem; }
     .about-stats { grid-template-columns: 1fr; }
+    .snake-copy h3 { font-size: 2rem; }
+    .snake-dpad { grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 38px); }
+    .snake-dir { min-width: 40px; min-height: 38px; }
     .section-doodle { width: 28px; height: 28px; }
   }
 </style>
@@ -2342,6 +2508,51 @@
 
 <div class="divider"><div class="divider-line"></div></div>
 
+<!-- SNAKE GAME -->
+<section id="snake" class="game-section fade-in">
+  <h2 class="section-title">
+    Snake
+    <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 25 Q9 14 18 14 L26 14 Q31 14 31 19 Q31 24 26 24 L18 24 Q15 24 15 28 Q15 32 20 32 L28 32" fill="rgba(199,44,115,0.1)"/>
+      <circle cx="27" cy="18" r="1" fill="var(--espresso)"/>
+      <path d="M31 19 L35 17" stroke-width="1"/>
+    </svg>
+  </h2>
+  <div class="snake-panel">
+    <div class="snake-copy">
+      <h3>Mini Snake</h3>
+      <p>A small retro break in the middle of the portfolio, built right into the page.</p>
+      <div class="snake-stats">
+        <div class="snake-stat">
+          <span>Score</span>
+          <strong id="snake-score">0</strong>
+        </div>
+        <div class="snake-stat">
+          <span>Best</span>
+          <strong id="snake-best">0</strong>
+        </div>
+      </div>
+    </div>
+    <div class="snake-game">
+      <div class="snake-canvas-wrap">
+        <canvas id="snake-board" width="360" height="360" tabindex="0" aria-label="Snake game board"></canvas>
+      </div>
+      <div class="snake-controls">
+        <button class="snake-btn" type="button" id="snake-start">Start</button>
+        <button class="snake-btn" type="button" id="snake-reset">Reset</button>
+      </div>
+      <div class="snake-dpad" aria-label="Snake direction controls">
+        <button class="snake-dir up" type="button" data-dir="up" aria-label="Move up">↑</button>
+        <button class="snake-dir left" type="button" data-dir="left" aria-label="Move left">←</button>
+        <button class="snake-dir right" type="button" data-dir="right" aria-label="Move right">→</button>
+        <button class="snake-dir down" type="button" data-dir="down" aria-label="Move down">↓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
 <!-- HAIBAO CAT SECTION -->
 <section id="haibao" class="cat-section fade-in">
   <div class="cat-section-inner">
@@ -2559,6 +2770,204 @@
       haibaoToggle.setAttribute('aria-expanded', String(isOpen));
       haibaoToggle.textContent = isOpen ? 'Hide Haibao' : 'Meet Haibao';
     });
+  }
+
+  // Snake mini-game
+  const snakeSection = document.getElementById('snake');
+  const snakeCanvas = document.getElementById('snake-board');
+  const snakeScore = document.getElementById('snake-score');
+  const snakeBest = document.getElementById('snake-best');
+  const snakeStart = document.getElementById('snake-start');
+  const snakeReset = document.getElementById('snake-reset');
+  const snakeDirs = document.querySelectorAll('.snake-dir');
+
+  if (snakeCanvas && snakeScore && snakeBest && snakeStart && snakeReset) {
+    const ctx = snakeCanvas.getContext('2d');
+    const tileCount = 18;
+    const tileSize = snakeCanvas.width / tileCount;
+    let snake = [];
+    let food = { x: 12, y: 9 };
+    let direction = { x: 1, y: 0 };
+    let nextDirection = { x: 1, y: 0 };
+    let score = 0;
+    let bestScore = 0;
+    let snakeTimer = null;
+    let snakeRunning = false;
+
+    function updateSnakeScore() {
+      snakeScore.textContent = String(score);
+      snakeBest.textContent = String(bestScore);
+    }
+
+    function placeFood() {
+      do {
+        food = {
+          x: Math.floor(Math.random() * tileCount),
+          y: Math.floor(Math.random() * tileCount)
+        };
+      } while (snake.some(segment => segment.x === food.x && segment.y === food.y));
+    }
+
+    function resetSnake() {
+      snake = [
+        { x: 8, y: 9 },
+        { x: 7, y: 9 },
+        { x: 6, y: 9 }
+      ];
+      direction = { x: 1, y: 0 };
+      nextDirection = { x: 1, y: 0 };
+      score = 0;
+      placeFood();
+      updateSnakeScore();
+      drawSnake();
+    }
+
+    function drawRoundedTile(x, y, color, inset = 2) {
+      const size = tileSize - inset * 2;
+      const px = x * tileSize + inset;
+      const py = y * tileSize + inset;
+      const radius = 5;
+
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.moveTo(px + radius, py);
+      ctx.lineTo(px + size - radius, py);
+      ctx.quadraticCurveTo(px + size, py, px + size, py + radius);
+      ctx.lineTo(px + size, py + size - radius);
+      ctx.quadraticCurveTo(px + size, py + size, px + size - radius, py + size);
+      ctx.lineTo(px + radius, py + size);
+      ctx.quadraticCurveTo(px, py + size, px, py + size - radius);
+      ctx.lineTo(px, py + radius);
+      ctx.quadraticCurveTo(px, py, px + radius, py);
+      ctx.fill();
+    }
+
+    function drawSnake() {
+      ctx.fillStyle = '#120b13';
+      ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+
+      ctx.strokeStyle = 'rgba(255,255,255,0.045)';
+      ctx.lineWidth = 1;
+      for (let i = 1; i < tileCount; i += 1) {
+        const line = i * tileSize;
+        ctx.beginPath();
+        ctx.moveTo(line, 0);
+        ctx.lineTo(line, snakeCanvas.height);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, line);
+        ctx.lineTo(snakeCanvas.width, line);
+        ctx.stroke();
+      }
+
+      drawRoundedTile(food.x, food.y, '#ff2f92', 3);
+
+      snake.forEach((segment, index) => {
+        drawRoundedTile(segment.x, segment.y, index === 0 ? '#fff8fc' : '#ff9acd', 2);
+      });
+    }
+
+    function stopSnake() {
+      clearInterval(snakeTimer);
+      snakeTimer = null;
+      snakeRunning = false;
+      snakeStart.textContent = 'Start';
+    }
+
+    function stepSnake() {
+      direction = nextDirection;
+      const head = {
+        x: snake[0].x + direction.x,
+        y: snake[0].y + direction.y
+      };
+
+      const hitWall = head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount;
+      const hitSelf = snake.some(segment => segment.x === head.x && segment.y === head.y);
+
+      if (hitWall || hitSelf) {
+        bestScore = Math.max(bestScore, score);
+        updateSnakeScore();
+        stopSnake();
+        drawSnake();
+        return;
+      }
+
+      snake.unshift(head);
+
+      if (head.x === food.x && head.y === food.y) {
+        score += 1;
+        bestScore = Math.max(bestScore, score);
+        placeFood();
+      } else {
+        snake.pop();
+      }
+
+      updateSnakeScore();
+      drawSnake();
+    }
+
+    function startSnake() {
+      if (snakeRunning) return;
+      snakeRunning = true;
+      snakeStart.textContent = 'Playing';
+      snakeTimer = setInterval(stepSnake, 130);
+    }
+
+    function setSnakeDirection(name) {
+      const directions = {
+        up: { x: 0, y: -1 },
+        down: { x: 0, y: 1 },
+        left: { x: -1, y: 0 },
+        right: { x: 1, y: 0 }
+      };
+      const selected = directions[name];
+
+      if (!selected) return;
+      const reversing = selected.x + direction.x === 0 && selected.y + direction.y === 0;
+      if (!reversing) {
+        nextDirection = selected;
+      }
+    }
+
+    snakeStart.addEventListener('click', startSnake);
+    snakeReset.addEventListener('click', () => {
+      stopSnake();
+      resetSnake();
+    });
+
+    snakeDirs.forEach(button => {
+      button.addEventListener('click', () => {
+        setSnakeDirection(button.dataset.dir);
+        startSnake();
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const keyMap = {
+        ArrowUp: 'up',
+        w: 'up',
+        W: 'up',
+        ArrowDown: 'down',
+        s: 'down',
+        S: 'down',
+        ArrowLeft: 'left',
+        a: 'left',
+        A: 'left',
+        ArrowRight: 'right',
+        d: 'right',
+        D: 'right'
+      };
+
+      const gameHasFocus = snakeSection && snakeSection.contains(document.activeElement);
+
+      if (keyMap[event.key] && (snakeRunning || gameHasFocus)) {
+        event.preventDefault();
+        setSnakeDirection(keyMap[event.key]);
+        startSnake();
+      }
+    });
+
+    resetSnake();
   }
 
   // Subtle parallax on hero blobs
