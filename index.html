@@ -276,10 +276,103 @@
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 0;
     background:
       linear-gradient(115deg, rgba(16,42,67,0.08), transparent 42%),
-      radial-gradient(circle at 18% 28%, rgba(255,47,146,0.14), transparent 24%);
+      linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,248,252,0.86));
     pointer-events: none;
+  }
+
+  /* Music visualizer background */
+  .music-ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .music-ambient::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,47,146,0.5), transparent);
+    animation: musicSweep 4.8s ease-in-out infinite;
+  }
+
+  .music-player {
+    position: absolute;
+    right: max(2rem, calc((100vw - 1200px) / 2));
+    bottom: 7.5rem;
+    width: min(340px, calc(100vw - 3rem));
+    padding: 1rem;
+    border-radius: 18px;
+    background: rgba(7,7,11,0.86);
+    border: 1px solid rgba(255,47,146,0.34);
+    box-shadow: 0 20px 55px rgba(31,24,34,0.2), 0 0 36px rgba(255,47,146,0.12);
+    color: #fff;
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.1s forwards;
+  }
+
+  .music-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .music-meta span:first-child { color: #ff9acd; }
+  .music-meta span:last-child { color: rgba(255,255,255,0.58); }
+
+  .music-bars {
+    height: 62px;
+    display: flex;
+    align-items: end;
+    gap: 0.35rem;
+  }
+
+  .music-bars i {
+    flex: 1;
+    min-width: 7px;
+    height: var(--bar-height, 34%);
+    border-radius: 999px 999px 4px 4px;
+    background: linear-gradient(180deg, #fff, #ff4fad 48%, #7a294f);
+    opacity: 0.88;
+    animation: musicBounce var(--bar-speed, 1.2s) ease-in-out infinite alternate;
+    animation-delay: var(--bar-delay, 0s);
+  }
+
+  .music-progress {
+    position: relative;
+    height: 4px;
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+  }
+
+  .music-progress::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 42%;
+    border-radius: inherit;
+    background: #ff4fad;
+    box-shadow: 0 0 18px rgba(255,79,173,0.78);
+    animation: musicProgress 5.5s linear infinite;
+  }
+
+  .hero-blob {
+    display: none;
   }
 
   /* Decorative blobs */
@@ -361,6 +454,21 @@
     0%, 100% { transform: translate(0, 0) scale(1); }
     40% { transform: translate(10px, -15px) scale(1.05); }
     80% { transform: translate(-8px, 8px) scale(0.95); }
+  }
+
+  @keyframes musicBounce {
+    from { height: calc(var(--bar-height, 34%) * 0.45); opacity: 0.5; }
+    to { height: min(100%, calc(var(--bar-height, 34%) * 1.65)); opacity: 1; }
+  }
+
+  @keyframes musicProgress {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(240%); }
+  }
+
+  @keyframes musicSweep {
+    0%, 100% { opacity: 0.18; transform: translateY(0); }
+    50% { opacity: 0.7; transform: translateY(-18px); }
   }
 
   .hero-content {
@@ -743,6 +851,96 @@
     font-size: 0.8rem;
     color: var(--slate);
     letter-spacing: 0.03em;
+  }
+
+  /* ---- PERSONALITY ---- */
+  .personality-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .personality-panel {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+    gap: 2rem;
+    align-items: stretch;
+    padding: 2.4rem;
+    border-radius: 24px;
+    background: #07070b;
+    color: #fff;
+    border: 1px solid rgba(255,47,146,0.28);
+    box-shadow: 0 24px 62px rgba(31,24,34,0.16);
+  }
+
+  .personality-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .personality-kicker {
+    color: #ff9acd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .personality-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .personality-line {
+    color: rgba(255,255,255,0.68);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .personality-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .personality-card {
+    min-height: 165px;
+    padding: 1.35rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .personality-card span {
+    display: inline-flex;
+    margin-bottom: 0.8rem;
+    color: #ff9acd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .personality-card h3 {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.24rem;
+    line-height: 1.2;
+    margin-bottom: 0.55rem;
+  }
+
+  .personality-card p {
+    color: rgba(255,255,255,0.66);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    font-weight: 300;
   }
 
   /* ---- AWS STUDENT BUILDER ---- */
@@ -1150,6 +1348,14 @@
     border: 1px solid rgba(255,47,146,0.15);
   }
 
+  .project-personal {
+    margin: -0.25rem 0 1rem;
+    color: var(--espresso);
+    font-size: 0.86rem;
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
   .tech-tags {
     display: flex;
     gap: 0.5rem;
@@ -1304,13 +1510,13 @@
   /* ---- FELLOWSHIPS & CLUBS ---- */
   .involvement-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.1rem;
   }
 
   .involvement-card {
     min-height: 0;
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: 18px;
     background: linear-gradient(145deg, rgba(255,255,255,0.88), rgba(255,240,248,0.86));
     border: 1px solid rgba(255,47,146,0.18);
@@ -1374,6 +1580,10 @@
     font-size: 0.84rem;
     line-height: 1.55;
     font-weight: 300;
+  }
+
+  .involvement-list li:nth-child(n+2) {
+    display: none;
   }
 
   .involvement-list li::marker {
@@ -2025,12 +2235,15 @@
     nav .nav-links::-webkit-scrollbar { display: none; }
     nav .nav-links a { min-height: 32px; padding: 0.45rem 0.65rem; font-size: 0.66rem; white-space: nowrap; }
     .hero { padding: 7rem 1.5rem 4rem; }
+    .music-player { left: 1.5rem; right: 1.5rem; bottom: 2rem; width: auto; }
     .hero-focus span:not(:last-child)::after { width: 6px; height: 6px; }
     .building-strip { padding: 0 1.5rem 2rem; margin-top: -1rem; }
     .building-card { grid-template-columns: 1fr; gap: 0.75rem; }
     .building-link { justify-self: start; }
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .personality-panel { grid-template-columns: 1fr; padding: 1.6rem; }
+    .personality-grid { grid-template-columns: 1fr; }
     .aws-panel { padding: 2rem; }
     .aws-header { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; }
     .aws-cards { grid-template-columns: 1fr; }
@@ -2060,6 +2273,7 @@
     .hero h1 { font-size: 2.5rem; }
     .intro-card { padding: 3rem 1rem; }
     .about-stats { grid-template-columns: 1fr; }
+    .music-bars { height: 48px; }
     .snake-copy h3 { font-size: 2rem; }
     .snake-dpad { grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 38px); }
     .snake-dir { min-width: 40px; min-height: 38px; }
@@ -2084,11 +2298,8 @@
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#personality">Personality</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#involvement">Clubs</a></li>
-    <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-socials">
@@ -2116,7 +2327,27 @@
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Decorative blobs -->
+  <div class="music-ambient" aria-hidden="true">
+    <div class="music-player">
+      <div class="music-meta">
+        <span>Now playing</span>
+        <span>JENNIE</span>
+      </div>
+      <div class="music-bars">
+        <i style="--bar-height:42%;--bar-speed:1.05s"></i>
+        <i style="--bar-height:78%;--bar-speed:0.82s;--bar-delay:-0.2s"></i>
+        <i style="--bar-height:54%;--bar-speed:1.25s;--bar-delay:-0.4s"></i>
+        <i style="--bar-height:94%;--bar-speed:0.9s;--bar-delay:-0.1s"></i>
+        <i style="--bar-height:62%;--bar-speed:1.15s;--bar-delay:-0.35s"></i>
+        <i style="--bar-height:88%;--bar-speed:0.78s;--bar-delay:-0.55s"></i>
+        <i style="--bar-height:48%;--bar-speed:1.3s;--bar-delay:-0.25s"></i>
+        <i style="--bar-height:74%;--bar-speed:0.95s;--bar-delay:-0.5s"></i>
+        <i style="--bar-height:58%;--bar-speed:1.18s;--bar-delay:-0.15s"></i>
+      </div>
+      <div class="music-progress"></div>
+    </div>
+  </div>
+  <!-- Decorative blobs kept hidden in favor of the music visualizer -->
   <div class="hero-blob blob-1"></div>
   <div class="hero-blob blob-2"></div>
   <div class="hero-blob blob-3"></div>
@@ -2128,7 +2359,7 @@
       <p class="hero-tag">Computer Information Systems student</p>
       <h1>Jenny<br><em>R</em></h1>
       <p class="hero-desc">
-        I build data, AI, cloud, and web projects that turn messy problems into simple tools people can actually use.
+        I like turning confusing systems into clear tools, useful stories, and interfaces that still feel warm.
       </p>
       <div class="hero-focus">
         <span>Data</span>
@@ -2141,12 +2372,9 @@
         <a href="#contact" class="hero-btn secondary">Contact Me</a>
       </div>
       <div class="hero-pills">
-        <span class="pill">Data Analysis</span>
-        <span class="pill">Python</span>
-        <span class="pill">SQL</span>
-        <span class="pill">Excel</span>
-        <span class="pill">AI / ML</span>
-        <span class="pill">Web Projects</span>
+        <span class="pill">Curious builder</span>
+        <span class="pill">Campus connector</span>
+        <span class="pill">Cat person</span>
       </div>
     </div>
     <div class="hero-image-slot">
@@ -2162,8 +2390,8 @@
 <!-- CURRENTLY BUILDING -->
 <div class="building-strip fade-in">
   <div class="building-card">
-    <span class="building-label">Currently Building</span>
-    <p>AI scam protection tools, data dashboards, cloud learning resources, and practical web projects for students and communities.</p>
+    <span class="building-label">Currently Into</span>
+    <p>AI safety tools, dashboard storytelling, beginner-friendly cloud learning, cute interface details, and NYC student tech events.</p>
     <a href="#projects" class="building-link">See work ↗</a>
   </div>
 </div>
@@ -2185,19 +2413,13 @@
     <div class="about-text">
       <p>
         Hi, I'm Jenny, a rising senior at <span class="highlight">Baruch College</span> studying Computer Information Systems.
-        I'm interested in <span class="highlight">consulting</span> and how technology can help businesses solve problems and work more efficiently.
+        I'm interested in <span class="highlight">consulting</span>, product, analytics, and the way technology helps people make better decisions.
       </p>
       <p>
-        I enjoy meeting new people, going to events, and learning from others.
-        I like building connections and hearing different perspectives.
+        I enjoy meeting new people, going to events, and learning from different perspectives. My favorite projects are practical, people-centered, and a little playful.
       </p>
       <p>
-        Through my classes and projects, I've been building skills in problem-solving, teamwork, and communication.
-        I speak Mandarin and English, and I'm currently interested in learning French.
-        I'm looking for opportunities to learn more, gain experience, and grow in consulting, project management, product, or business analyst roles.
-      </p>
-      <p>
-        I'm currently open to internships and projects, and I'm always happy to connect and learn more.
+        I speak Mandarin and English, I'm curious about French, and I'm currently open to internships, projects, and conversations around consulting, project management, product, and business analyst roles.
       </p>
     </div>
     <div class="about-stats">
@@ -2216,6 +2438,45 @@
       <div class="stat-card">
         <div class="stat-number">2027</div>
         <div class="stat-label">Expected Graduation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- PERSONALITY -->
+<section id="personality" class="personality-section fade-in">
+  <div class="personality-panel">
+    <div class="personality-intro">
+      <div>
+        <p class="personality-kicker">How I Think</p>
+        <h2>Clear, curious, and a little playful.</h2>
+      </div>
+      <p class="personality-line">
+        I want my work to feel useful first, then memorable. That shows up in dashboards, hackathon projects, campus resources, and small details like the music visualizer and Haibao.
+      </p>
+    </div>
+    <div class="personality-grid">
+      <div class="personality-card">
+        <span>01</span>
+        <h3>Make it clear</h3>
+        <p>I like simplifying messy information so people can scan it, trust it, and act on it.</p>
+      </div>
+      <div class="personality-card">
+        <span>02</span>
+        <h3>Build for real people</h3>
+        <p>My strongest ideas usually come from everyday problems, student needs, or community safety.</p>
+      </div>
+      <div class="personality-card">
+        <span>03</span>
+        <h3>Learn in public</h3>
+        <p>Hackathons, fellowships, events, and campus programs keep me experimenting and improving fast.</p>
+      </div>
+      <div class="personality-card">
+        <span>04</span>
+        <h3>Keep warmth in tech</h3>
+        <p>I care about tools that feel approachable, not intimidating, especially for beginners.</p>
       </div>
     </div>
   </div>
@@ -2370,6 +2631,7 @@
         RootCause uses NYC Street Tree Census data to uncover sidewalk risk patterns.
         My team cleaned over 684K records and built a geospatial dashboard for analysis.
       </p>
+      <div class="project-personal">Why I liked it: it connected data work to a real city problem people walk past every day.</div>
       <div class="project-impact">Impact: 1st Place out of 20+ teams at Baruch Datathon.</div>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
@@ -2393,6 +2655,7 @@
         Waypoint is a real-time AI application that supports voice and text interaction.
         I worked on backend systems for real-time communication.
       </p>
+      <div class="project-personal">Why I liked it: it pushed me to think about speed, clarity, and how AI feels in a live conversation.</div>
       <div class="project-impact">Focus: FastAPI and WebSockets backend flow for live voice and text interaction.</div>
       <div class="tech-tags">
         <span class="tech-tag">Claude API</span>
@@ -2415,6 +2678,7 @@
         Mogul Blocks is a full-stack strategy game that simulates real estate market decisions.
         My team built it during Hack Brooklyn.
       </p>
+      <div class="project-personal">Why I liked it: it let my playful side turn business strategy into something interactive.</div>
       <div class="project-impact">Achievement: Best Lovable Project at Hack Brooklyn.</div>
       <div class="tech-tags">
         <span class="tech-tag">React</span>
@@ -2436,9 +2700,8 @@
       </div>
       <p>
         TrustLayer helps people detect, understand, and share scam warnings before they get tricked.
-        It checks suspicious messages, gives a scam risk score, explains red flags in plain language,
-        and supports multilingual warnings.
       </p>
+      <div class="project-personal">Why I liked it: scam protection should be easy for families and communities to understand.</div>
       <div class="project-impact">Purpose: make scam detection clearer and more accessible for different communities.</div>
       <div class="tech-tags">
         <span class="tech-tag">Next.js</span>
