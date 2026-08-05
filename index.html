@@ -1507,97 +1507,156 @@
     border: 1px solid rgba(255,47,146,0.2);
   }
 
-  /* ---- FELLOWSHIPS & CLUBS ---- */
-  .involvement-grid {
+  /* ---- PROGRAM PASSPORT ---- */
+  .program-intro {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+    gap: 2rem;
+    align-items: end;
+    margin: -1.2rem 0 2rem;
   }
 
-  .involvement-card {
-    min-height: 0;
-    padding: 1.25rem;
+  .program-intro p {
+    max-width: 660px;
+    color: var(--slate);
+    font-size: 1rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .program-moodboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+  }
+
+  .program-mood {
+    min-height: 92px;
+    padding: 0.9rem;
+    border-radius: 16px;
+    background: #07070b;
+    color: #fff;
+    border: 1px solid rgba(255,47,146,0.32);
+    box-shadow: 0 16px 34px rgba(31,24,34,0.12);
+  }
+
+  .program-mood span {
+    display: block;
+    color: #ff9acd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+
+  .program-mood strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    line-height: 1.05;
+  }
+
+  .program-passport {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .program-stamp {
+    min-height: 190px;
+    padding: 1.2rem;
     border-radius: 18px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.88), rgba(255,240,248,0.86));
-    border: 1px solid rgba(255,47,146,0.18);
-    box-shadow: 0 18px 44px rgba(31,24,34,0.08);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,0.92), rgba(255,240,248,0.9)),
+      repeating-linear-gradient(45deg, transparent 0 10px, rgba(255,47,146,0.05) 10px 12px);
+    border: 1px dashed rgba(199,44,115,0.46);
+    box-shadow: 0 16px 38px rgba(31,24,34,0.08);
+    position: relative;
+    overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
-  .involvement-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,47,146,0.35);
-    box-shadow: 0 22px 54px rgba(31,24,34,0.12);
+  .program-stamp:nth-child(2n) {
+    transform: rotate(1deg);
   }
 
-  .involvement-tag {
+  .program-stamp:nth-child(3n) {
+    transform: rotate(-1deg);
+  }
+
+  .program-stamp:hover {
+    transform: translateY(-5px) rotate(0deg);
+    border-color: rgba(255,47,146,0.7);
+    box-shadow: 0 22px 50px rgba(31,24,34,0.13);
+  }
+
+  .program-stamp::after {
+    content: attr(data-stamp);
+    position: absolute;
+    right: -1.2rem;
+    bottom: 1.1rem;
+    padding: 0.35rem 1.4rem;
+    border: 2px solid rgba(255,47,146,0.28);
+    border-radius: 999px;
+    color: rgba(122,41,79,0.34);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transform: rotate(-16deg);
+  }
+
+  .program-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1rem;
+    border-radius: 14px;
     display: inline-flex;
     align-items: center;
-    margin-bottom: 1rem;
-    padding: 0.36rem 0.65rem;
-    border-radius: 999px;
-    background: rgba(7,7,11,0.92);
-    color: #fff;
+    justify-content: center;
+    background: #07070b;
+    color: #ff9acd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  .program-type {
+    display: block;
+    color: var(--accent);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    margin-bottom: 0.45rem;
   }
 
-  .involvement-card h3 {
+  .program-stamp h3 {
     font-family: 'Playfair Display', serif;
     color: var(--espresso);
-    font-size: 1.3rem;
-    line-height: 1.2;
-    margin-bottom: 0.4rem;
+    font-size: 1.22rem;
+    line-height: 1.15;
+    margin-bottom: 0.55rem;
   }
 
-  .involvement-role {
-    color: var(--accent);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.74rem;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-  }
-
-  .involvement-card p {
-    color: var(--slate);
-    font-size: 0.92rem;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  .involvement-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-top: 0.8rem;
-    padding-left: 1rem;
+  .program-role {
     color: var(--slate);
     font-size: 0.84rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .program-note {
+    color: var(--espresso);
+    font-size: 0.88rem;
     line-height: 1.55;
-    font-weight: 300;
-  }
-
-  .involvement-list li:nth-child(n+2) {
-    display: none;
-  }
-
-  .involvement-list li::marker {
-    color: var(--accent);
-  }
-
-  .involvement-note {
-    margin-top: 1.2rem;
-    color: var(--caramel);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-weight: 500;
   }
 
   /* ---- CERTIFICATIONS ---- */
@@ -2244,6 +2303,8 @@
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .personality-panel { grid-template-columns: 1fr; padding: 1.6rem; }
     .personality-grid { grid-template-columns: 1fr; }
+    .program-intro { grid-template-columns: 1fr; align-items: start; }
+    .program-passport { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .aws-panel { padding: 2rem; }
     .aws-header { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; }
     .aws-cards { grid-template-columns: 1fr; }
@@ -2274,6 +2335,12 @@
     .intro-card { padding: 3rem 1rem; }
     .about-stats { grid-template-columns: 1fr; }
     .music-bars { height: 48px; }
+    .program-moodboard { grid-template-columns: 1fr; }
+    .program-mood { min-height: 0; }
+    .program-passport { grid-template-columns: 1fr; }
+    .program-stamp,
+    .program-stamp:nth-child(2n),
+    .program-stamp:nth-child(3n) { transform: none; }
     .snake-copy h3 { font-size: 2rem; }
     .snake-dpad { grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 38px); }
     .snake-dir { min-width: 40px; min-height: 38px; }
@@ -2821,89 +2888,89 @@
       <path d="M24 22 Q27 20 30 22"/>
     </svg>
   </h2>
-  <div class="involvement-grid">
-    <div class="involvement-card">
-      <span class="involvement-tag">Fellowship</span>
+  <div class="program-intro">
+    <p>
+      These programs are the places where I practice showing up: learning technical skills, asking better questions, meeting people, and building confidence across tech and business.
+    </p>
+    <div class="program-moodboard" aria-label="Program themes">
+      <div class="program-mood">
+        <span>People</span>
+        <strong>mentors + peers</strong>
+      </div>
+      <div class="program-mood">
+        <span>Skills</span>
+        <strong>data + strategy</strong>
+      </div>
+      <div class="program-mood">
+        <span>Energy</span>
+        <strong>events + growth</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="program-passport">
+    <div class="program-stamp" data-stamp="Analytics">
+      <span class="program-icon">NYC</span>
+      <span class="program-type">Fellowship</span>
       <h3>NYC Tech Talent Pipeline</h3>
-      <div class="involvement-role">Data Analytics Fellow &middot; Jun 2026 - Present</div>
-      <ul class="involvement-list">
-        <li>Selected for a competitive workforce development program focused on data analytics, business intelligence, and professional development.</li>
-        <li>Completed hands-on projects using Excel, SQL, and data visualization tools to analyze business datasets and generate insights.</li>
-        <li>Participated in technical workshops, career coaching, and employer networking events with industry professionals.</li>
-      </ul>
-      <div class="involvement-note">Data analytics</div>
+      <div class="program-role">Data Analytics Fellow &middot; Jun 2026 - Present</div>
+      <p class="program-note">Where I sharpen business intelligence, SQL, Excel, and practical data storytelling.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Community</span>
+
+    <div class="program-stamp" data-stamp="Women in Tech">
+      <span class="program-icon">RTC</span>
+      <span class="program-type">Community</span>
       <h3>Rewriting the Code</h3>
-      <div class="involvement-role">Member &middot; 2026 - Present</div>
-      <ul class="involvement-list">
-        <li>Participate in mentorship, networking, and professional development programs for women and underrepresented talent in technology.</li>
-        <li>Engage with industry professionals and peers through career workshops, technical events, and community initiatives.</li>
-        <li>Develop professional skills through mentorship opportunities, leadership programming, and career readiness activities.</li>
-      </ul>
-      <div class="involvement-note">Women in tech</div>
+      <div class="program-role">Member &middot; 2026 - Present</div>
+      <p class="program-note">A community that keeps me connected to women in tech, mentorship, and career growth.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Club</span>
+
+    <div class="program-stamp" data-stamp="Strategy">
+      <span class="program-icon">BB</span>
+      <span class="program-type">Club</span>
       <h3>Baruch Business Brigades</h3>
-      <div class="involvement-role">Analyst Program Member &middot; Feb 2026 - Present</div>
-      <ul class="involvement-list">
-        <li>Work with a small team to analyze business and public sector case studies using data-driven approaches.</li>
-        <li>Identify key metrics, KPIs, and operational or strategic challenges.</li>
-        <li>Present insights and recommendations through structured team presentations.</li>
-      </ul>
-      <div class="involvement-note">Business analysis</div>
+      <div class="program-role">Analyst Program Member &middot; Feb 2026 - Present</div>
+      <p class="program-note">Where my consulting side gets to practice cases, metrics, and team presentations.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Fellowship</span>
+
+    <div class="program-stamp" data-stamp="Career">
+      <span class="program-icon">YU</span>
+      <span class="program-type">Fellowship</span>
       <h3>Year Up United</h3>
-      <div class="involvement-role">Fellowship participant</div>
-      <p>Building career readiness, professional communication, and workplace skills through a structured career development program.</p>
-      <div class="involvement-note">Career growth</div>
+      <div class="program-role">Fellowship participant</div>
+      <p class="program-note">A structured space for professional communication, career readiness, and workplace skills.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Mentorship</span>
+
+    <div class="program-stamp" data-stamp="Mentorship">
+      <span class="program-icon">ANY</span>
+      <span class="program-type">Mentorship</span>
       <h3>America Needs You</h3>
-      <div class="involvement-role">Mentee &middot; Feb 2026 - Present</div>
-      <ul class="involvement-list">
-        <li>Participate in a structured mentorship program focused on career development, networking, and professional growth.</li>
-        <li>Meet regularly with a mentor to receive guidance on career direction, goal setting, and industry insights.</li>
-        <li>Develop communication, resume building, and professional networking skills through workshops and one-on-one sessions.</li>
-      </ul>
-      <div class="involvement-note">Mentorship</div>
+      <div class="program-role">Mentee &middot; Feb 2026 - Present</div>
+      <p class="program-note">A program that helps me turn ambition into clearer goals, habits, and conversations.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Mentorship</span>
+
+    <div class="program-stamp" data-stamp="Community">
+      <span class="program-icon">AAD</span>
+      <span class="program-type">Mentorship</span>
       <h3>Asian American Dream</h3>
-      <div class="involvement-role">Mentee &middot; Feb 2026 - Present</div>
-      <ul class="involvement-list">
-        <li>Participate in a structured mentorship program focused on career development, networking, and professional growth.</li>
-        <li>Meet regularly with a mentor to receive guidance on career direction, goal setting, and industry insights.</li>
-        <li>Develop communication, resume building, and professional networking skills through workshops and one-on-one sessions.</li>
-      </ul>
-      <div class="involvement-note">Community + growth</div>
+      <div class="program-role">Mentee &middot; Feb 2026 - Present</div>
+      <p class="program-note">A place that connects career support with identity, community, and long-term growth.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Mentorship</span>
+
+    <div class="program-stamp" data-stamp="Ready">
+      <span class="program-icon">SW</span>
+      <span class="program-type">Mentorship</span>
       <h3>StreetWise Partners</h3>
-      <div class="involvement-role">Mentee &middot; 13-week program completed</div>
-      <ul class="involvement-list">
-        <li>Completed a 13-week mentorship program focused on career development, networking, and professional growth.</li>
-        <li>Met regularly with a mentor to receive guidance on career direction, goal setting, and industry insights.</li>
-        <li>Developed communication, resume building, and professional networking skills through workshops and one-on-one sessions.</li>
-      </ul>
-      <div class="involvement-note">Career readiness</div>
+      <div class="program-role">Mentee &middot; 13-week program completed</div>
+      <p class="program-note">Helped me get more intentional about networking, communication, and career direction.</p>
     </div>
-    <div class="involvement-card">
-      <span class="involvement-tag">Club</span>
+
+    <div class="program-stamp" data-stamp="Security">
+      <span class="program-icon">ISA</span>
+      <span class="program-type">Club</span>
       <h3>Baruch ISACA Cybersecurity Club</h3>
-      <div class="involvement-role">Club General Member &middot; Sep 2025 - Present</div>
-      <ul class="involvement-list">
-        <li>Participate in cybersecurity club meetings, workshops, and community events focused on industry trends, career development, and technical learning.</li>
-        <li>Engage with peers and professionals to strengthen knowledge of cybersecurity concepts, networking, and emerging technologies.</li>
-      </ul>
-      <div class="involvement-note">Cybersecurity</div>
+      <div class="program-role">General Member &middot; Sep 2025 - Present</div>
+      <p class="program-note">Keeps me curious about cybersecurity, risk, and how people protect digital systems.</p>
     </div>
   </div>
 </section>
