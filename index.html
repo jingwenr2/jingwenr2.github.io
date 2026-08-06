@@ -1721,7 +1721,7 @@
     color: var(--espresso);
   }
 
-  /* ---- SNAKE GAME ---- */
+  /* ---- CATCH GAME ---- */
   .game-section {
     max-width: 1200px;
   }
@@ -1735,7 +1735,7 @@
     font-weight: 300;
   }
 
-  .snake-panel {
+  .catch-panel {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
     gap: 2rem;
@@ -1750,7 +1750,7 @@
     position: relative;
   }
 
-  .snake-panel::before {
+  .catch-panel::before {
     content: '';
     position: absolute;
     inset: -35%;
@@ -1760,13 +1760,13 @@
     pointer-events: none;
   }
 
-  .snake-copy,
-  .snake-game {
+  .catch-copy,
+  .catch-game {
     position: relative;
     z-index: 1;
   }
 
-  .snake-copy h3 {
+  .catch-copy h3 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1;
@@ -1774,7 +1774,7 @@
     text-shadow: 0 0 28px rgba(255,47,146,0.34);
   }
 
-  .snake-copy p {
+  .catch-copy p {
     max-width: 520px;
     color: rgba(255,255,255,0.72);
     font-size: 1rem;
@@ -1783,13 +1783,13 @@
     margin-bottom: 1.5rem;
   }
 
-  .snake-stats {
+  .catch-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
   }
 
-  .snake-stat {
+  .catch-stat {
     min-width: 104px;
     padding: 0.75rem 0.9rem;
     border-radius: 16px;
@@ -1797,7 +1797,7 @@
     border: 1px solid rgba(255,255,255,0.12);
   }
 
-  .snake-stat span {
+  .catch-stat span {
     display: block;
     color: #ff9acd;
     font-family: 'JetBrains Mono', monospace;
@@ -1808,20 +1808,20 @@
     margin-bottom: 0.25rem;
   }
 
-  .snake-stat strong {
+  .catch-stat strong {
     display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.35rem;
     line-height: 1;
   }
 
-  .snake-game {
+  .catch-game {
     display: grid;
     gap: 1rem;
     justify-items: center;
   }
 
-  .snake-canvas-wrap {
+  .catch-canvas-wrap {
     width: min(100%, 420px);
     aspect-ratio: 1;
     padding: 0.75rem;
@@ -1830,7 +1830,7 @@
     border: 1px solid rgba(255,255,255,0.14);
   }
 
-  #snake-board {
+  #catch-board {
     width: 100%;
     height: 100%;
     display: block;
@@ -1839,15 +1839,15 @@
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
   }
 
-  .snake-controls {
+  .catch-controls {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .snake-btn,
-  .snake-dir {
+  .catch-btn,
+  .catch-move {
     border: 0;
     background: #fff;
     color: #07070b;
@@ -1861,35 +1861,29 @@
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   }
 
-  .snake-btn {
+  .catch-btn {
     min-height: 42px;
     padding: 0.72rem 1rem;
   }
 
-  .snake-btn:hover,
-  .snake-dir:hover {
+  .catch-btn:hover,
+  .catch-move:hover {
     background: #ff2f92;
     color: #fff;
     transform: translateY(-2px);
   }
 
-  .snake-dpad {
-    display: grid;
-    grid-template-columns: repeat(3, 44px);
-    grid-template-rows: repeat(3, 40px);
-    gap: 0.35rem;
+  .catch-moves {
+    display: flex;
+    gap: 0.65rem;
+    justify-content: center;
   }
 
-  .snake-dir {
-    min-width: 44px;
-    min-height: 40px;
+  .catch-move {
+    min-width: 72px;
+    min-height: 42px;
     padding: 0;
   }
-
-  .snake-dir.up { grid-column: 2; grid-row: 1; }
-  .snake-dir.left { grid-column: 1; grid-row: 2; }
-  .snake-dir.right { grid-column: 3; grid-row: 2; }
-  .snake-dir.down { grid-column: 2; grid-row: 3; }
 
   /* ---- CAT SECTION ---- */
   .cat-section {
@@ -2316,8 +2310,8 @@
     .project-badge { white-space: normal; }
     .cert-item { grid-template-columns: 1fr; }
     .cert-link { justify-self: start; }
-    .snake-panel { grid-template-columns: 1fr; padding: 1.4rem; }
-    .snake-canvas-wrap { width: min(100%, 360px); }
+    .catch-panel { grid-template-columns: 1fr; padding: 1.4rem; }
+    .catch-canvas-wrap { width: min(100%, 360px); }
     .contact-section { padding: 5rem 1.5rem; }
     .cat-section { padding: 3rem 1.5rem; }
     .cat-section-inner { padding: 2rem; }
@@ -2341,9 +2335,8 @@
     .program-stamp,
     .program-stamp:nth-child(2n),
     .program-stamp:nth-child(3n) { transform: none; }
-    .snake-copy h3 { font-size: 2rem; }
-    .snake-dpad { grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 38px); }
-    .snake-dir { min-width: 40px; min-height: 38px; }
+    .catch-copy h3 { font-size: 2rem; }
+    .catch-move { min-width: 64px; min-height: 40px; }
     .section-doodle { width: 28px; height: 28px; }
   }
 </style>
@@ -3052,45 +3045,50 @@
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- SNAKE GAME -->
-<section id="snake" class="game-section fade-in">
+<!-- CATCH GAME -->
+<section id="catch" class="game-section fade-in">
   <h2 class="section-title">
-    Snake
+    Haibao Catch
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 25 Q9 14 18 14 L26 14 Q31 14 31 19 Q31 24 26 24 L18 24 Q15 24 15 28 Q15 32 20 32 L28 32" fill="rgba(199,44,115,0.1)"/>
-      <circle cx="27" cy="18" r="1" fill="var(--espresso)"/>
-      <path d="M31 19 L35 17" stroke-width="1"/>
+      <path d="M10 16 L7 8 L15 13" fill="rgba(199,44,115,0.15)"/>
+      <path d="M30 16 L33 8 L25 13" fill="rgba(199,44,115,0.15)"/>
+      <ellipse cx="20" cy="23" rx="13" ry="11" fill="rgba(199,44,115,0.1)"/>
+      <circle cx="16" cy="21" r="1.5" fill="var(--espresso)"/>
+      <circle cx="24" cy="21" r="1.5" fill="var(--espresso)"/>
+      <path d="M17 26 Q20 29 23 26"/>
     </svg>
   </h2>
-  <p class="game-subtitle">A tiny arcade break for anyone scrolling through the portfolio. Click start, chase the pink snack, and try to beat your best score.</p>
-  <div class="snake-panel">
-    <div class="snake-copy">
-      <h3>Mini Snake</h3>
-      <p>Portfolio side quest: move with arrow keys, WASD, or the buttons on mobile.</p>
-      <div class="snake-stats">
-        <div class="snake-stat">
+  <p class="game-subtitle">A quick portfolio break: help Haibao catch the falling pink snacks. Move left and right with A/D, arrow keys, or the buttons.</p>
+  <div class="catch-panel">
+    <div class="catch-copy">
+      <h3>Catch the Snack</h3>
+      <p>The goal is simple: catch as many snacks as possible before three fall past Haibao.</p>
+      <div class="catch-stats">
+        <div class="catch-stat">
           <span>Score</span>
-          <strong id="snake-score">0</strong>
+          <strong id="catch-score">0</strong>
         </div>
-        <div class="snake-stat">
+        <div class="catch-stat">
           <span>Best</span>
-          <strong id="snake-best">0</strong>
+          <strong id="catch-best">0</strong>
+        </div>
+        <div class="catch-stat">
+          <span>Misses</span>
+          <strong id="catch-misses">0</strong>
         </div>
       </div>
     </div>
-    <div class="snake-game">
-      <div class="snake-canvas-wrap">
-        <canvas id="snake-board" width="360" height="360" tabindex="0" aria-label="Snake game board"></canvas>
+    <div class="catch-game">
+      <div class="catch-canvas-wrap">
+        <canvas id="catch-board" width="360" height="360" tabindex="0" aria-label="Haibao catch game board"></canvas>
       </div>
-      <div class="snake-controls">
-        <button class="snake-btn" type="button" id="snake-start">Start</button>
-        <button class="snake-btn" type="button" id="snake-reset">Reset</button>
+      <div class="catch-controls">
+        <button class="catch-btn" type="button" id="catch-start">Start</button>
+        <button class="catch-btn" type="button" id="catch-reset">Reset</button>
       </div>
-      <div class="snake-dpad" aria-label="Snake direction controls">
-        <button class="snake-dir up" type="button" data-dir="up" aria-label="Move up">↑</button>
-        <button class="snake-dir left" type="button" data-dir="left" aria-label="Move left">←</button>
-        <button class="snake-dir right" type="button" data-dir="right" aria-label="Move right">→</button>
-        <button class="snake-dir down" type="button" data-dir="down" aria-label="Move down">↓</button>
+      <div class="catch-moves" aria-label="Haibao movement controls">
+        <button class="catch-move" type="button" data-move="-1" aria-label="Move left">←</button>
+        <button class="catch-move" type="button" data-move="1" aria-label="Move right">→</button>
       </div>
     </div>
   </div>
@@ -3318,202 +3316,185 @@
     });
   }
 
-  // Snake mini-game
-  const snakeSection = document.getElementById('snake');
-  const snakeCanvas = document.getElementById('snake-board');
-  const snakeScore = document.getElementById('snake-score');
-  const snakeBest = document.getElementById('snake-best');
-  const snakeStart = document.getElementById('snake-start');
-  const snakeReset = document.getElementById('snake-reset');
-  const snakeDirs = document.querySelectorAll('.snake-dir');
+  // Haibao Catch mini-game
+  const catchSection = document.getElementById('catch');
+  const catchCanvas = document.getElementById('catch-board');
+  const catchScore = document.getElementById('catch-score');
+  const catchBest = document.getElementById('catch-best');
+  const catchMisses = document.getElementById('catch-misses');
+  const catchStart = document.getElementById('catch-start');
+  const catchReset = document.getElementById('catch-reset');
+  const catchMoves = document.querySelectorAll('.catch-move');
 
-  if (snakeCanvas && snakeScore && snakeBest && snakeStart && snakeReset) {
-    const ctx = snakeCanvas.getContext('2d');
-    const tileCount = 18;
-    const tileSize = snakeCanvas.width / tileCount;
-    let snake = [];
-    let food = { x: 12, y: 9 };
-    let direction = { x: 1, y: 0 };
-    let nextDirection = { x: 1, y: 0 };
+  if (catchCanvas && catchScore && catchBest && catchMisses && catchStart && catchReset) {
+    const ctx = catchCanvas.getContext('2d');
+    const player = { x: 150, y: 302, width: 76, height: 28, speed: 26 };
+    const snack = { x: 160, y: 36, size: 20, speed: 2.6 };
     let score = 0;
     let bestScore = 0;
-    let snakeTimer = null;
-    let snakeRunning = false;
+    let misses = 0;
+    let catchTimer = null;
+    let isCatchRunning = false;
 
-    function updateSnakeScore() {
-      snakeScore.textContent = String(score);
-      snakeBest.textContent = String(bestScore);
+    function updateCatchStats() {
+      catchScore.textContent = String(score);
+      catchBest.textContent = String(bestScore);
+      catchMisses.textContent = String(misses);
     }
 
-    function placeFood() {
-      do {
-        food = {
-          x: Math.floor(Math.random() * tileCount),
-          y: Math.floor(Math.random() * tileCount)
-        };
-      } while (snake.some(segment => segment.x === food.x && segment.y === food.y));
+    function placeSnackAtTop() {
+      snack.x = 24 + Math.random() * (catchCanvas.width - 48);
+      snack.y = 26;
+      snack.speed = 2.4 + Math.min(score, 12) * 0.16;
     }
 
-    function resetSnake() {
-      snake = [
-        { x: 8, y: 9 },
-        { x: 7, y: 9 },
-        { x: 6, y: 9 }
-      ];
-      direction = { x: 1, y: 0 };
-      nextDirection = { x: 1, y: 0 };
-      score = 0;
-      placeFood();
-      updateSnakeScore();
-      drawSnake();
-    }
-
-    function drawRoundedTile(x, y, color, inset = 2) {
-      const size = tileSize - inset * 2;
-      const px = x * tileSize + inset;
-      const py = y * tileSize + inset;
-      const radius = 5;
-
-      ctx.fillStyle = color;
+    function drawHaibao() {
+      ctx.fillStyle = '#fff8fc';
       ctx.beginPath();
-      ctx.moveTo(px + radius, py);
-      ctx.lineTo(px + size - radius, py);
-      ctx.quadraticCurveTo(px + size, py, px + size, py + radius);
-      ctx.lineTo(px + size, py + size - radius);
-      ctx.quadraticCurveTo(px + size, py + size, px + size - radius, py + size);
-      ctx.lineTo(px + radius, py + size);
-      ctx.quadraticCurveTo(px, py + size, px, py + size - radius);
-      ctx.lineTo(px, py + radius);
-      ctx.quadraticCurveTo(px, py, px + radius, py);
+      ctx.roundRect(player.x, player.y, player.width, player.height, 14);
+      ctx.fill();
+
+      ctx.fillStyle = '#ff9acd';
+      ctx.beginPath();
+      ctx.moveTo(player.x + 14, player.y + 4);
+      ctx.lineTo(player.x + 24, player.y - 14);
+      ctx.lineTo(player.x + 34, player.y + 4);
+      ctx.moveTo(player.x + 42, player.y + 4);
+      ctx.lineTo(player.x + 52, player.y - 14);
+      ctx.lineTo(player.x + 62, player.y + 4);
+      ctx.fill();
+
+      ctx.fillStyle = '#1f1822';
+      ctx.beginPath();
+      ctx.arc(player.x + 28, player.y + 13, 2, 0, Math.PI * 2);
+      ctx.arc(player.x + 48, player.y + 13, 2, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    function drawSnake() {
+    function drawSnack() {
+      ctx.fillStyle = '#ff2f92';
+      ctx.beginPath();
+      ctx.arc(snack.x, snack.y, snack.size / 2, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.72)';
+      ctx.beginPath();
+      ctx.arc(snack.x - 4, snack.y - 4, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawCatchGame() {
       ctx.fillStyle = '#120b13';
-      ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+      ctx.fillRect(0, 0, catchCanvas.width, catchCanvas.height);
 
-      ctx.strokeStyle = 'rgba(255,255,255,0.045)';
-      ctx.lineWidth = 1;
-      for (let i = 1; i < tileCount; i += 1) {
-        const line = i * tileSize;
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      for (let y = 40; y < catchCanvas.height; y += 40) {
         ctx.beginPath();
-        ctx.moveTo(line, 0);
-        ctx.lineTo(line, snakeCanvas.height);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(0, line);
-        ctx.lineTo(snakeCanvas.width, line);
+        ctx.moveTo(0, y);
+        ctx.lineTo(catchCanvas.width, y);
         ctx.stroke();
       }
 
-      drawRoundedTile(food.x, food.y, '#ff2f92', 3);
-
-      snake.forEach((segment, index) => {
-        drawRoundedTile(segment.x, segment.y, index === 0 ? '#fff8fc' : '#ff9acd', 2);
-      });
+      drawSnack();
+      drawHaibao();
     }
 
-    function stopSnake() {
-      clearInterval(snakeTimer);
-      snakeTimer = null;
-      snakeRunning = false;
-      snakeStart.textContent = 'Start';
+    function movePlayer(amount) {
+      player.x += amount * player.speed;
+      player.x = Math.max(8, Math.min(catchCanvas.width - player.width - 8, player.x));
+      drawCatchGame();
     }
 
-    function stepSnake() {
-      direction = nextDirection;
-      const head = {
-        x: snake[0].x + direction.x,
-        y: snake[0].y + direction.y
-      };
+    function snackTouchesPlayer() {
+      const snackBottom = snack.y + snack.size / 2;
+      const snackInPlayerWidth = snack.x >= player.x && snack.x <= player.x + player.width;
+      return snackBottom >= player.y && snackInPlayerWidth;
+    }
 
-      const hitWall = head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount;
-      const hitSelf = snake.some(segment => segment.x === head.x && segment.y === head.y);
+    function stopCatchGame() {
+      clearInterval(catchTimer);
+      catchTimer = null;
+      isCatchRunning = false;
+      catchStart.textContent = 'Start';
+    }
 
-      if (hitWall || hitSelf) {
-        bestScore = Math.max(bestScore, score);
-        updateSnakeScore();
-        stopSnake();
-        drawSnake();
-        return;
-      }
+    function resetCatchGame() {
+      score = 0;
+      misses = 0;
+      player.x = 150;
+      placeSnackAtTop();
+      updateCatchStats();
+      drawCatchGame();
+    }
 
-      snake.unshift(head);
+    // Game loop: snack falls, then the game checks catch or miss.
+    function playCatchRound() {
+      snack.y += snack.speed;
 
-      if (head.x === food.x && head.y === food.y) {
+      if (snackTouchesPlayer()) {
         score += 1;
         bestScore = Math.max(bestScore, score);
-        placeFood();
-      } else {
-        snake.pop();
+        placeSnackAtTop();
       }
 
-      updateSnakeScore();
-      drawSnake();
+      if (snack.y > catchCanvas.height + snack.size) {
+        misses += 1;
+        placeSnackAtTop();
+      }
+
+      if (misses >= 3) {
+        stopCatchGame();
+      }
+
+      updateCatchStats();
+      drawCatchGame();
     }
 
-    function startSnake() {
-      if (snakeRunning) return;
-      snakeRunning = true;
-      snakeStart.textContent = 'Playing';
-      snakeTimer = setInterval(stepSnake, 130);
+    function startCatchGame() {
+      if (isCatchRunning) return;
+      isCatchRunning = true;
+      catchStart.textContent = 'Playing';
+      catchTimer = setInterval(playCatchRound, 24);
+      catchCanvas.focus();
     }
 
-    function setSnakeDirection(name) {
-      const directions = {
-        up: { x: 0, y: -1 },
-        down: { x: 0, y: 1 },
-        left: { x: -1, y: 0 },
-        right: { x: 1, y: 0 }
+    function catchGameIsFocused() {
+      return catchSection && catchSection.contains(document.activeElement);
+    }
+
+    function handleCatchKeydown(event) {
+      const moveByKey = {
+        ArrowLeft: -1,
+        a: -1,
+        A: -1,
+        ArrowRight: 1,
+        d: 1,
+        D: 1
       };
-      const selected = directions[name];
 
-      if (!selected) return;
-      const reversing = selected.x + direction.x === 0 && selected.y + direction.y === 0;
-      if (!reversing) {
-        nextDirection = selected;
-      }
+      if (!moveByKey[event.key] || (!isCatchRunning && !catchGameIsFocused())) return;
+
+      event.preventDefault();
+      movePlayer(moveByKey[event.key]);
+      startCatchGame();
     }
 
-    snakeStart.addEventListener('click', startSnake);
-    snakeReset.addEventListener('click', () => {
-      stopSnake();
-      resetSnake();
+    catchStart.addEventListener('click', startCatchGame);
+    catchReset.addEventListener('click', () => {
+      stopCatchGame();
+      resetCatchGame();
     });
 
-    snakeDirs.forEach(button => {
+    catchMoves.forEach(button => {
       button.addEventListener('click', () => {
-        setSnakeDirection(button.dataset.dir);
-        startSnake();
+        movePlayer(Number(button.dataset.move));
+        startCatchGame();
       });
     });
 
-    document.addEventListener('keydown', (event) => {
-      const keyMap = {
-        ArrowUp: 'up',
-        w: 'up',
-        W: 'up',
-        ArrowDown: 'down',
-        s: 'down',
-        S: 'down',
-        ArrowLeft: 'left',
-        a: 'left',
-        A: 'left',
-        ArrowRight: 'right',
-        d: 'right',
-        D: 'right'
-      };
+    document.addEventListener('keydown', handleCatchKeydown);
 
-      const gameHasFocus = snakeSection && snakeSection.contains(document.activeElement);
-
-      if (keyMap[event.key] && (snakeRunning || gameHasFocus)) {
-        event.preventDefault();
-        setSnakeDirection(keyMap[event.key]);
-        startSnake();
-      }
-    });
-
-    resetSnake();
+    resetCatchGame();
   }
 
   // Subtle parallax on hero blobs
