@@ -371,6 +371,29 @@
     animation: musicProgress 5.5s linear infinite;
   }
 
+  .music-note {
+    margin-top: 0.75rem;
+    color: rgba(255,255,255,0.62);
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+
+  .music-link {
+    display: inline-flex;
+    margin-top: 0.7rem;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .music-link:hover {
+    color: #ff9acd;
+  }
+
   .hero-blob {
     display: none;
   }
@@ -1579,6 +1602,14 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
+  .program-stamp.has-photo {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+  }
+
   .program-stamp:nth-child(2n) {
     transform: rotate(1deg);
   }
@@ -1624,6 +1655,23 @@
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.06em;
+  }
+
+  .program-photo {
+    min-height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,47,146,0.08);
+    border: 1px solid rgba(199,44,115,0.18);
+  }
+
+  .program-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
   }
 
   .program-type {
@@ -1721,7 +1769,7 @@
     color: var(--espresso);
   }
 
-  /* ---- CATCH GAME ---- */
+  /* ---- HAIBAO VIBE ---- */
   .game-section {
     max-width: 1200px;
   }
@@ -1735,9 +1783,9 @@
     font-weight: 300;
   }
 
-  .catch-panel {
+  .vibe-panel {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
     gap: 2rem;
     align-items: center;
     padding: 2rem;
@@ -1750,7 +1798,7 @@
     position: relative;
   }
 
-  .catch-panel::before {
+  .vibe-panel::before {
     content: '';
     position: absolute;
     inset: -35%;
@@ -1760,13 +1808,13 @@
     pointer-events: none;
   }
 
-  .catch-copy,
-  .catch-game {
+  .vibe-copy,
+  .vibe-card {
     position: relative;
     z-index: 1;
   }
 
-  .catch-copy h3 {
+  .vibe-copy h3 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1;
@@ -1774,7 +1822,7 @@
     text-shadow: 0 0 28px rgba(255,47,146,0.34);
   }
 
-  .catch-copy p {
+  .vibe-copy p {
     max-width: 520px;
     color: rgba(255,255,255,0.72);
     font-size: 1rem;
@@ -1783,71 +1831,13 @@
     margin-bottom: 1.5rem;
   }
 
-  .catch-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .catch-stat {
-    min-width: 104px;
-    padding: 0.75rem 0.9rem;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .catch-stat span {
-    display: block;
-    color: #ff9acd;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-  }
-
-  .catch-stat strong {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.35rem;
-    line-height: 1;
-  }
-
-  .catch-game {
-    display: grid;
-    gap: 1rem;
-    justify-items: center;
-  }
-
-  .catch-canvas-wrap {
-    width: min(100%, 420px);
-    aspect-ratio: 1;
-    padding: 0.75rem;
-    border-radius: 24px;
-    background: linear-gradient(135deg, rgba(255,47,146,0.28), rgba(255,255,255,0.08));
-    border: 1px solid rgba(255,255,255,0.14);
-  }
-
-  #catch-board {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 16px;
-    background: #120b13;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-  }
-
-  .catch-controls {
+  .vibe-actions {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
-  .catch-btn,
-  .catch-move {
+  .vibe-btn {
     border: 0;
     background: #fff;
     color: #07070b;
@@ -1859,30 +1849,59 @@
     border-radius: 999px;
     box-shadow: 0 10px 22px rgba(0,0,0,0.18);
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-  }
-
-  .catch-btn {
     min-height: 42px;
     padding: 0.72rem 1rem;
   }
 
-  .catch-btn:hover,
-  .catch-move:hover {
+  .vibe-btn:hover {
     background: #ff2f92;
     color: #fff;
     transform: translateY(-2px);
   }
 
-  .catch-moves {
-    display: flex;
-    gap: 0.65rem;
-    justify-content: center;
+  .vibe-card {
+    min-height: 310px;
+    padding: 1.5rem;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
   }
 
-  .catch-move {
-    min-width: 72px;
-    min-height: 42px;
-    padding: 0;
+  .vibe-face {
+    width: 118px;
+    height: 118px;
+    margin-bottom: 1.2rem;
+    border-radius: 38% 62% 54% 46% / 52% 46% 54% 48%;
+    background: #fff8fc;
+    color: #1f1822;
+    display: grid;
+    place-items: center;
+    font-size: 3.2rem;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.22), 0 0 26px rgba(255,47,146,0.24);
+    transition: transform 0.25s ease, border-radius 0.25s ease;
+  }
+
+  .vibe-card.is-changing .vibe-face {
+    transform: rotate(-5deg) scale(1.06);
+    border-radius: 62% 38% 44% 56% / 46% 52% 48% 54%;
+  }
+
+  .vibe-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    line-height: 1.1;
+    margin-bottom: 0.65rem;
+  }
+
+  .vibe-card p {
+    color: rgba(255,255,255,0.68);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    font-weight: 300;
   }
 
   /* ---- CAT SECTION ---- */
@@ -2299,6 +2318,7 @@
     .personality-grid { grid-template-columns: 1fr; }
     .program-intro { grid-template-columns: 1fr; align-items: start; }
     .program-passport { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .program-stamp.has-photo { grid-column: span 2; grid-template-columns: 1fr; }
     .aws-panel { padding: 2rem; }
     .aws-header { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; }
     .aws-cards { grid-template-columns: 1fr; }
@@ -2310,8 +2330,7 @@
     .project-badge { white-space: normal; }
     .cert-item { grid-template-columns: 1fr; }
     .cert-link { justify-self: start; }
-    .catch-panel { grid-template-columns: 1fr; padding: 1.4rem; }
-    .catch-canvas-wrap { width: min(100%, 360px); }
+    .vibe-panel { grid-template-columns: 1fr; padding: 1.4rem; }
     .contact-section { padding: 5rem 1.5rem; }
     .cat-section { padding: 3rem 1.5rem; }
     .cat-section-inner { padding: 2rem; }
@@ -2335,8 +2354,10 @@
     .program-stamp,
     .program-stamp:nth-child(2n),
     .program-stamp:nth-child(3n) { transform: none; }
-    .catch-copy h3 { font-size: 2rem; }
-    .catch-move { min-width: 64px; min-height: 40px; }
+    .program-stamp.has-photo { grid-column: span 1; }
+    .program-photo img { min-height: 210px; }
+    .vibe-copy h3 { font-size: 2rem; }
+    .vibe-card { min-height: 260px; }
     .section-doodle { width: 28px; height: 28px; }
   }
 </style>
@@ -2390,8 +2411,8 @@
   <div class="music-ambient" aria-hidden="true">
     <div class="music-player">
       <div class="music-meta">
-        <span>Now playing</span>
-        <span>JENNIE</span>
+        <span>JENNIE mode</span>
+        <span>visual vibe</span>
       </div>
       <div class="music-bars">
         <i style="--bar-height:42%;--bar-speed:1.05s"></i>
@@ -2405,6 +2426,8 @@
         <i style="--bar-height:58%;--bar-speed:1.18s;--bar-delay:-0.15s"></i>
       </div>
       <div class="music-progress"></div>
+      <p class="music-note">This is a visualizer, not embedded audio. Listen to the song on a licensed music platform.</p>
+      <a class="music-link" href="https://open.spotify.com/track/4pbmabJ4xKOFHaUJxTR0zb" target="_blank" rel="noopener noreferrer">Listen to like JENNIE ↗</a>
     </div>
   </div>
   <!-- Decorative blobs kept hidden in favor of the music visualizer -->
@@ -2902,12 +2925,17 @@
   </div>
 
   <div class="program-passport">
-    <div class="program-stamp" data-stamp="Analytics">
-      <span class="program-icon">NYC</span>
-      <span class="program-type">Fellowship</span>
-      <h3>NYC Tech Talent Pipeline</h3>
-      <div class="program-role">Data Analytics Fellow &middot; Jun 2026 - Present</div>
-      <p class="program-note">Where I sharpen business intelligence, SQL, Excel, and practical data storytelling.</p>
+    <div class="program-stamp has-photo" data-stamp="Analytics">
+      <div>
+        <span class="program-icon">NYC</span>
+        <span class="program-type">Fellowship</span>
+        <h3>NYC Tech Talent Pipeline</h3>
+        <div class="program-role">Data Analytics Fellow &middot; Jun 2026 - Present</div>
+        <p class="program-note">Where I sharpen business intelligence, SQL, Excel, and practical data storytelling.</p>
+      </div>
+      <div class="program-photo">
+        <img src="nyc-tech-talent-pipeline-note.jpg" alt="NYC Tech Talent Pipeline group visit at the Museum of American Finance" onerror="this.closest('.program-photo').remove()">
+      </div>
     </div>
 
     <div class="program-stamp" data-stamp="Women in Tech">
@@ -2918,12 +2946,17 @@
       <p class="program-note">A community that keeps me connected to women in tech, mentorship, and career growth.</p>
     </div>
 
-    <div class="program-stamp" data-stamp="Strategy">
-      <span class="program-icon">BB</span>
-      <span class="program-type">Club</span>
-      <h3>Baruch Business Brigades</h3>
-      <div class="program-role">Analyst Program Member &middot; Feb 2026 - Present</div>
-      <p class="program-note">Where my consulting side gets to practice cases, metrics, and team presentations.</p>
+    <div class="program-stamp has-photo" data-stamp="Strategy">
+      <div>
+        <span class="program-icon">BB</span>
+        <span class="program-type">Club</span>
+        <h3>Baruch Business Brigades</h3>
+        <div class="program-role">Analyst Program Member &middot; Feb 2026 - Present</div>
+        <p class="program-note">Where my consulting side gets to practice cases, metrics, and team presentations.</p>
+      </div>
+      <div class="program-photo">
+        <img src="baruch-business-brigades-verde-vida.jpg" alt="Baruch Business Brigades Verde Vida presentation deck" onerror="this.closest('.program-photo').remove()">
+      </div>
     </div>
 
     <div class="program-stamp" data-stamp="Career">
@@ -2942,20 +2975,30 @@
       <p class="program-note">A program that helps me turn ambition into clearer goals, habits, and conversations.</p>
     </div>
 
-    <div class="program-stamp" data-stamp="Community">
-      <span class="program-icon">AAD</span>
-      <span class="program-type">Mentorship</span>
-      <h3>Asian American Dream</h3>
-      <div class="program-role">Mentee &middot; Feb 2026 - Present</div>
-      <p class="program-note">A place that connects career support with identity, community, and long-term growth.</p>
+    <div class="program-stamp has-photo" data-stamp="Community">
+      <div>
+        <span class="program-icon">AAD</span>
+        <span class="program-type">Mentorship</span>
+        <h3>Asian American Dream</h3>
+        <div class="program-role">Mentee &middot; Feb 2026 - Present</div>
+        <p class="program-note">A place that connects career support with identity, community, and long-term growth.</p>
+      </div>
+      <div class="program-photo">
+        <img src="asian-american-dream-event.jpg" alt="Asian American Dream event group conversation" onerror="this.closest('.program-photo').remove()">
+      </div>
     </div>
 
-    <div class="program-stamp" data-stamp="Ready">
-      <span class="program-icon">SW</span>
-      <span class="program-type">Mentorship</span>
-      <h3>StreetWise Partners</h3>
-      <div class="program-role">Mentee &middot; 13-week program completed</div>
-      <p class="program-note">Helped me get more intentional about networking, communication, and career direction.</p>
+    <div class="program-stamp has-photo" data-stamp="Ready">
+      <div>
+        <span class="program-icon">SW</span>
+        <span class="program-type">Mentorship</span>
+        <h3>StreetWise Partners</h3>
+        <div class="program-role">Mentee &middot; 13-week program completed</div>
+        <p class="program-note">Helped me get more intentional about networking, communication, and career direction.</p>
+      </div>
+      <div class="program-photo">
+        <img src="streetwise-hsbc.jpg" alt="StreetWise Partners group photo at HSBC event" onerror="this.closest('.program-photo').remove()">
+      </div>
     </div>
 
     <div class="program-stamp" data-stamp="Security">
@@ -3045,10 +3088,10 @@
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- CATCH GAME -->
-<section id="catch" class="game-section fade-in">
+<!-- HAIBAO VIBE -->
+<section id="vibe" class="game-section fade-in">
   <h2 class="section-title">
-    Haibao Catch
+    Haibao Mood
     <svg class="section-doodle" viewBox="0 0 40 40" fill="none" stroke="var(--caramel)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 16 L7 8 L15 13" fill="rgba(199,44,115,0.15)"/>
       <path d="M30 16 L33 8 L25 13" fill="rgba(199,44,115,0.15)"/>
@@ -3058,38 +3101,22 @@
       <path d="M17 26 Q20 29 23 26"/>
     </svg>
   </h2>
-  <p class="game-subtitle">A quick portfolio break: help Haibao catch the falling pink snacks. Move left and right with A/D, arrow keys, or the buttons.</p>
-  <div class="catch-panel">
-    <div class="catch-copy">
-      <h3>Catch the Snack</h3>
-      <p>The goal is simple: catch as many snacks as possible before three fall past Haibao.</p>
-      <div class="catch-stats">
-        <div class="catch-stat">
-          <span>Score</span>
-          <strong id="catch-score">0</strong>
-        </div>
-        <div class="catch-stat">
-          <span>Best</span>
-          <strong id="catch-best">0</strong>
-        </div>
-        <div class="catch-stat">
-          <span>Misses</span>
-          <strong id="catch-misses">0</strong>
-        </div>
+  <p class="game-subtitle">No confusing controls anymore. Pick a mood and Haibao gives the page a tiny personality moment.</p>
+  <div class="vibe-panel">
+    <div class="vibe-copy">
+      <h3>Pick a Portfolio Mood</h3>
+      <p>This is meant to be a simple playful break, not a real game. One click, one mood, one little Haibao reaction.</p>
+      <div class="vibe-actions">
+        <button class="vibe-btn" type="button" data-vibe="focus">Focus</button>
+        <button class="vibe-btn" type="button" data-vibe="bold">Bold</button>
+        <button class="vibe-btn" type="button" data-vibe="cozy">Cozy</button>
+        <button class="vibe-btn" type="button" data-vibe="surprise">Surprise</button>
       </div>
     </div>
-    <div class="catch-game">
-      <div class="catch-canvas-wrap">
-        <canvas id="catch-board" width="360" height="360" tabindex="0" aria-label="Haibao catch game board"></canvas>
-      </div>
-      <div class="catch-controls">
-        <button class="catch-btn" type="button" id="catch-start">Start</button>
-        <button class="catch-btn" type="button" id="catch-reset">Reset</button>
-      </div>
-      <div class="catch-moves" aria-label="Haibao movement controls">
-        <button class="catch-move" type="button" data-move="-1" aria-label="Move left">←</button>
-        <button class="catch-move" type="button" data-move="1" aria-label="Move right">→</button>
-      </div>
+    <div class="vibe-card" id="vibe-card" aria-live="polite">
+      <div class="vibe-face" id="vibe-face">J</div>
+      <h4 id="vibe-title">Curious Builder Mode</h4>
+      <p id="vibe-message">Haibao says: keep the page clear, warm, and a little playful.</p>
     </div>
   </div>
 </section>
@@ -3316,185 +3343,50 @@
     });
   }
 
-  // Haibao Catch mini-game
-  const catchSection = document.getElementById('catch');
-  const catchCanvas = document.getElementById('catch-board');
-  const catchScore = document.getElementById('catch-score');
-  const catchBest = document.getElementById('catch-best');
-  const catchMisses = document.getElementById('catch-misses');
-  const catchStart = document.getElementById('catch-start');
-  const catchReset = document.getElementById('catch-reset');
-  const catchMoves = document.querySelectorAll('.catch-move');
+  // Haibao mood picker
+  const vibeCard = document.getElementById('vibe-card');
+  const vibeFace = document.getElementById('vibe-face');
+  const vibeTitle = document.getElementById('vibe-title');
+  const vibeMessage = document.getElementById('vibe-message');
+  const vibeButtons = document.querySelectorAll('.vibe-btn');
 
-  if (catchCanvas && catchScore && catchBest && catchMisses && catchStart && catchReset) {
-    const ctx = catchCanvas.getContext('2d');
-    const player = { x: 150, y: 302, width: 76, height: 28, speed: 26 };
-    const snack = { x: 160, y: 36, size: 20, speed: 2.6 };
-    let score = 0;
-    let bestScore = 0;
-    let misses = 0;
-    let catchTimer = null;
-    let isCatchRunning = false;
-
-    function updateCatchStats() {
-      catchScore.textContent = String(score);
-      catchBest.textContent = String(bestScore);
-      catchMisses.textContent = String(misses);
+  const vibes = {
+    focus: {
+      face: 'F',
+      title: 'Focus Mode',
+      message: 'Haibao says: simplify the messy parts first, then make it pretty.'
+    },
+    bold: {
+      face: 'B',
+      title: 'Bold Mode',
+      message: 'Haibao says: lead with your wins, your voice, and your strongest projects.'
+    },
+    cozy: {
+      face: 'C',
+      title: 'Cozy Mode',
+      message: 'Haibao says: keep the page warm, friendly, and easy to stay with.'
+    },
+    surprise: {
+      face: 'J',
+      title: 'JENNIE Mode',
+      message: 'Haibao says: confident, playful, polished, and a little iconic.'
     }
+  };
 
-    function placeSnackAtTop() {
-      snack.x = 24 + Math.random() * (catchCanvas.width - 48);
-      snack.y = 26;
-      snack.speed = 2.4 + Math.min(score, 12) * 0.16;
-    }
+  function showVibe(name) {
+    const vibe = vibes[name] || vibes.surprise;
+    vibeFace.textContent = vibe.face;
+    vibeTitle.textContent = vibe.title;
+    vibeMessage.textContent = vibe.message;
 
-    function drawHaibao() {
-      ctx.fillStyle = '#fff8fc';
-      ctx.beginPath();
-      ctx.roundRect(player.x, player.y, player.width, player.height, 14);
-      ctx.fill();
+    vibeCard.classList.add('is-changing');
+    setTimeout(() => vibeCard.classList.remove('is-changing'), 260);
+  }
 
-      ctx.fillStyle = '#ff9acd';
-      ctx.beginPath();
-      ctx.moveTo(player.x + 14, player.y + 4);
-      ctx.lineTo(player.x + 24, player.y - 14);
-      ctx.lineTo(player.x + 34, player.y + 4);
-      ctx.moveTo(player.x + 42, player.y + 4);
-      ctx.lineTo(player.x + 52, player.y - 14);
-      ctx.lineTo(player.x + 62, player.y + 4);
-      ctx.fill();
-
-      ctx.fillStyle = '#1f1822';
-      ctx.beginPath();
-      ctx.arc(player.x + 28, player.y + 13, 2, 0, Math.PI * 2);
-      ctx.arc(player.x + 48, player.y + 13, 2, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    function drawSnack() {
-      ctx.fillStyle = '#ff2f92';
-      ctx.beginPath();
-      ctx.arc(snack.x, snack.y, snack.size / 2, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.fillStyle = 'rgba(255,255,255,0.72)';
-      ctx.beginPath();
-      ctx.arc(snack.x - 4, snack.y - 4, 3, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    function drawCatchGame() {
-      ctx.fillStyle = '#120b13';
-      ctx.fillRect(0, 0, catchCanvas.width, catchCanvas.height);
-
-      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-      for (let y = 40; y < catchCanvas.height; y += 40) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(catchCanvas.width, y);
-        ctx.stroke();
-      }
-
-      drawSnack();
-      drawHaibao();
-    }
-
-    function movePlayer(amount) {
-      player.x += amount * player.speed;
-      player.x = Math.max(8, Math.min(catchCanvas.width - player.width - 8, player.x));
-      drawCatchGame();
-    }
-
-    function snackTouchesPlayer() {
-      const snackBottom = snack.y + snack.size / 2;
-      const snackInPlayerWidth = snack.x >= player.x && snack.x <= player.x + player.width;
-      return snackBottom >= player.y && snackInPlayerWidth;
-    }
-
-    function stopCatchGame() {
-      clearInterval(catchTimer);
-      catchTimer = null;
-      isCatchRunning = false;
-      catchStart.textContent = 'Start';
-    }
-
-    function resetCatchGame() {
-      score = 0;
-      misses = 0;
-      player.x = 150;
-      placeSnackAtTop();
-      updateCatchStats();
-      drawCatchGame();
-    }
-
-    // Game loop: snack falls, then the game checks catch or miss.
-    function playCatchRound() {
-      snack.y += snack.speed;
-
-      if (snackTouchesPlayer()) {
-        score += 1;
-        bestScore = Math.max(bestScore, score);
-        placeSnackAtTop();
-      }
-
-      if (snack.y > catchCanvas.height + snack.size) {
-        misses += 1;
-        placeSnackAtTop();
-      }
-
-      if (misses >= 3) {
-        stopCatchGame();
-      }
-
-      updateCatchStats();
-      drawCatchGame();
-    }
-
-    function startCatchGame() {
-      if (isCatchRunning) return;
-      isCatchRunning = true;
-      catchStart.textContent = 'Playing';
-      catchTimer = setInterval(playCatchRound, 24);
-      catchCanvas.focus();
-    }
-
-    function catchGameIsFocused() {
-      return catchSection && catchSection.contains(document.activeElement);
-    }
-
-    function handleCatchKeydown(event) {
-      const moveByKey = {
-        ArrowLeft: -1,
-        a: -1,
-        A: -1,
-        ArrowRight: 1,
-        d: 1,
-        D: 1
-      };
-
-      if (!moveByKey[event.key] || (!isCatchRunning && !catchGameIsFocused())) return;
-
-      event.preventDefault();
-      movePlayer(moveByKey[event.key]);
-      startCatchGame();
-    }
-
-    catchStart.addEventListener('click', startCatchGame);
-    catchReset.addEventListener('click', () => {
-      stopCatchGame();
-      resetCatchGame();
+  if (vibeCard && vibeFace && vibeTitle && vibeMessage) {
+    vibeButtons.forEach(button => {
+      button.addEventListener('click', () => showVibe(button.dataset.vibe));
     });
-
-    catchMoves.forEach(button => {
-      button.addEventListener('click', () => {
-        movePlayer(Number(button.dataset.move));
-        startCatchGame();
-      });
-    });
-
-    document.addEventListener('keydown', handleCatchKeydown);
-
-    resetCatchGame();
   }
 
   // Subtle parallax on hero blobs
