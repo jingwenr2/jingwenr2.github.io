@@ -1091,6 +1091,28 @@
     outline-offset: 4px;
   }
 
+  .aws-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .aws-qr img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.12);
+  }
+
+  .aws-qr span {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.55);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+
   .aws-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2633,7 +2655,13 @@
         </p>
       </div>
       <!-- Update AWS links in this section as resources change. -->
-      <a href="https://bit.ly/4c75FPX" target="_blank" rel="noopener noreferrer" class="aws-cta">Join with my AWS Builder link</a>
+      <div>
+        <a href="https://bit.ly/4c75FPX" target="_blank" rel="noopener noreferrer" class="aws-cta">Join with my AWS Builder link</a>
+        <div class="aws-qr">
+          <img src="aws-qr.png" alt="QR code to sign up for AWS Student Builder" />
+          <span>Scan to sign up</span>
+        </div>
+      </div>
     </div>
 
     <div class="aws-cards">
